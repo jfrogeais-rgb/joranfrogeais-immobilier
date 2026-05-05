@@ -1,0 +1,20 @@
+# Dépendances locales / outils
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+# Fichier de dev local
+_serve.js
+_tmp_*
+*.tmp
+.cache/
+
+# Editeurs
+.vscode/
+.idea/
+*.swp
+
+# Variables d'environnement (si futur)
+.env
+.env.local

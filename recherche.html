@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Définir mon projet d'achat — Joran Frogeais Efficity</title>
+<meta name="description" content="Décrivez votre recherche immobilière en 2 minutes. Joran Frogeais vous envoie une sélection de biens correspondants.">
+<link rel="icon" type="image/jpeg" href="assets/photos/logo-picto.jpg">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.form-section { padding: 60px 24px; }
+.form-shell {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+  padding: 40px;
+}
+.form-intro {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.form-intro h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.form-intro p {
+  color: var(--gray-700);
+  font-size: 15px;
+}
+.form-row { margin-bottom: 20px; }
+.form-row label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--gray-900);
+}
+.form-row label .req { color: #E03131; }
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row input[type="tel"],
+.form-row input[type="number"],
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--gray-300);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color .2s;
+  background: var(--white);
+}
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--efficity-green);
+  box-shadow: 0 0 0 3px rgba(91,176,75,0.15);
+}
+.form-row textarea { resize: vertical; min-height: 80px; }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+.checks { display: flex; flex-wrap: wrap; gap: 10px; }
+.check-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1.5px solid var(--gray-300);
+  border-radius: 8px;
+  background: var(--white);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all .2s;
+  user-select: none;
+}
+.check-chip input { display: none; }
+.check-chip:hover { border-color: var(--efficity-green); }
+.check-chip.checked {
+  background: var(--efficity-green-light);
+  border-color: var(--efficity-green);
+  color: var(--efficity-green-darker);
+  font-weight: 600;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--efficity-green);
+  color: var(--white);
+  border: 0;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s;
+  margin-top: 16px;
+  box-shadow: 0 4px 16px rgba(91,176,75,0.3);
+}
+.form-submit:hover {
+  background: var(--efficity-green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(91,176,75,0.4);
+}
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-msg {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: none;
+}
+.form-msg.error { background: #FFE5E5; color: #C92A2A; display: block; }
+.form-msg.success { background: var(--efficity-green-light); color: var(--efficity-green-darker); display: block; }
+
+@media (max-width: 600px) {
+  .form-shell { padding: 24px; }
+  .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/photos/logo-efficity-color.png" alt="Efficity">
+      <div class="nav-logo-text">
+        Joran Frogeais
+        <small>Conseiller immobilier Efficity</small>
+      </div>
+    </a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="vendre.html">Vendre</a>
+      <a href="acheter.html" class="active">Acheter</a>
+      <a href="biens.html">Mes biens</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="rejoindre.html">Rejoindre</a>
+      <a href="estimation.html" class="nav-cta">Estimation gratuite</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Définissez votre projet d'achat</h1>
+  <p>2 minutes pour décrire ce que vous cherchez. Je vous envoie une sélection personnalisée sous 48h, depuis mes mandats et le réseau Efficity (2500 conseillers).</p>
+</header>
+
+<section class="form-section">
+  <form class="form-shell" id="acqForm">
+
+    <div class="form-intro">
+      <h2>🔎 Votre recherche</h2>
+      <p>Toutes les infos pour matcher avec les biens dispo, en France entière.</p>
+    </div>
+
+    <!-- TYPE DE BIEN -->
+    <div class="form-row">
+      <label>Type(s) de bien recherché(s) <span class="req">*</span></label>
+      <div class="checks">
+        <label class="check-chip"><input type="checkbox" name="type_bien" value="maison"> 🏠 Maison</label>
+        <label class="check-chip"><input type="checkbox" name="type_bien" value="appartement"> 🏢 Appartement</label>
+        <label class="check-chip"><input type="checkbox" name="type_bien" value="terrain"> 🌳 Terrain</label>
+        <label class="check-chip"><input type="checkbox" name="type_bien" value="immeuble"> 🏬 Immeuble</label>
+        <label class="check-chip"><input type="checkbox" name="type_bien" value="commerce"> 🏪 Local / commerce</label>
+      </div>
+    </div>
+
+    <!-- ZONE -->
+    <div class="form-row">
+      <label for="zone">Zone géographique <span class="req">*</span></label>
+      <input type="text" id="zone" name="zone" placeholder="Ex: Rennes, Cesson, agglomération rennaise, Bretagne, France entière..." required>
+    </div>
+
+    <!-- BUDGET -->
+    <div class="form-row form-grid-2">
+      <div>
+        <label for="budget_max">Budget max (€) <span class="req">*</span></label>
+        <input type="number" id="budget_max" name="budget_max" placeholder="Ex: 350000" required min="0" step="1000">
+      </div>
+      <div>
+        <label for="apport">Apport disponible (€)</label>
+        <input type="number" id="apport" name="apport" placeholder="Ex: 50000" min="0" step="1000">
+      </div>
+    </div>
+
+    <!-- SURFACE / PIECES -->
+    <div class="form-row form-grid-3">
+      <div>
+        <label for="surface_min">Surface min (m²)</label>
+        <input type="number" id="surface_min" name="surface_min" placeholder="Ex: 80" min="0">
+      </div>
+      <div>
+        <label for="pieces_min">Pièces min</label>
+        <input type="number" id="pieces_min" name="pieces_min" placeholder="Ex: 3" min="0">
+      </div>
+      <div>
+        <label for="chambres_min">Chambres min</label>
+        <input type="number" id="chambres_min" name="chambres_min" placeholder="Ex: 2" min="0">
+      </div>
+    </div>
+
+    <!-- DELAI -->
+    <div class="form-row">
+      <label for="delai">Délai d'achat <span class="req">*</span></label>
+      <select id="delai" name="delai" required>
+        <option value="">Choisir...</option>
+        <option value="immediat">Immédiat (j'achète si je trouve)</option>
+        <option value="3_mois">Sous 3 mois</option>
+        <option value="6_mois">Sous 6 mois</option>
+        <option value="1_an">Sous 1 an</option>
+        <option value="je_regarde">Je regarde sans urgence</option>
+      </select>
+    </div>
+
+    <!-- FINANCEMENT -->
+    <div class="form-row">
+      <label>Financement <span class="req">*</span></label>
+      <div class="checks">
+        <label class="check-chip"><input type="radio" name="financement" value="valide" required> ✅ Validé (accord banque)</label>
+        <label class="check-chip"><input type="radio" name="financement" value="en_cours"> ⏳ En cours</label>
+        <label class="check-chip"><input type="radio" name="financement" value="a_faire"> 🔍 À faire</label>
+        <label class="check-chip"><input type="radio" name="financement" value="cash"> 💶 Cash / sans crédit</label>
+      </div>
+    </div>
+
+    <!-- PARTICULARITES -->
+    <div class="form-row">
+      <label>Critères importants (optionnel)</label>
+      <div class="checks">
+        <label class="check-chip"><input type="checkbox" name="atouts" value="jardin"> 🌿 Jardin</label>
+        <label class="check-chip"><input type="checkbox" name="atouts" value="garage"> 🚗 Garage</label>
+        <label class="check-chip"><input type="checkbox" name="atouts" value="parking"> 🅿️ Parking</label>
+        <label class="check-chip"><input type="checkbox" name="atouts" value="terrasse"> ☀️ Terrasse / balcon</label>
+        <label class="check-chip"><input type="checkbox" name="atouts" value="neuf"> ✨ Neuf / récent</label>
+        <label class="check-chip"><input type="checkbox" name="atouts" value="ascenseur"> 🛗 Ascenseur</label>
+        <label class="check-chip"><input type="checkbox" name="atouts" value="rdc"> 🏡 Rez-de-chaussée</label>
+        <label class="check-chip"><input type="checkbox" name="atouts" value="cave"> 🍷 Cave</label>
+      </div>
+    </div>
+
+    <!-- INFOS PERSO -->
+    <div class="form-intro" style="margin-top: 32px; margin-bottom: 16px;">
+      <h2>📞 Vos coordonnées</h2>
+      <p>Pour vous envoyer la sélection et discuter de votre projet.</p>
+    </div>
+
+    <div class="form-row form-grid-2">
+      <div>
+        <label for="prenom">Prénom <span class="req">*</span></label>
+        <input type="text" id="prenom" name="prenom" required>
+      </div>
+      <div>
+        <label for="nom">Nom <span class="req">*</span></label>
+        <input type="text" id="nom" name="nom" required>
+      </div>
+    </div>
+
+    <div class="form-row form-grid-2">
+      <div>
+        <label for="email">Email <span class="req">*</span></label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="telephone">Téléphone <span class="req">*</span></label>
+        <input type="tel" id="telephone" name="telephone" required placeholder="06 12 34 56 78">
+      </div>
+    </div>
+
+    <!-- NOTES -->
+    <div class="form-row">
+      <label for="notes">Autre chose à savoir ? (optionnel)</label>
+      <textarea id="notes" name="notes" placeholder="Détails sur votre projet, contraintes, etc."></textarea>
+    </div>
+
+    <button type="submit" class="form-submit" id="submitBtn">
+      Envoyer ma recherche →
+    </button>
+
+    <div class="form-msg" id="formMsg"></div>
+
+    <p style="text-align:center; font-size:13px; color:var(--gray-500); margin-top:20px;">
+      Vos données restent confidentielles. Pas de spam, je vous envoie uniquement les biens correspondants.
+    </p>
+  </form>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/photos/logo-efficity-blanc.png" alt="Efficity">
+      <p>Joran Frogeais — Conseiller immobilier indépendant Efficity. Rennes, Bretagne et toute la France via le réseau Efficity.</p>
+    </div>
+    <div><h4>Services</h4><ul><li><a href="vendre.html">Vendre</a></li><li><a href="acheter.html">Acheter</a></li><li><a href="estimation.html">Estimation gratuite</a></li><li><a href="rejoindre.html">Rejoindre Efficity</a></li></ul></div>
+    <div><h4>À propos</h4><ul><li><a href="a-propos.html">Mon parcours</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="tel:+33758631170">07 58 63 11 70</a></li><li><a href="mailto:jfrogeais@efficity.com">jfrogeais@efficity.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">© 2026 Joran Frogeais — Conseiller indépendant Efficity.</div>
+</footer>
+
+<script>
+const WEBHOOK_URL = "https://frogeais.app.n8n.cloud/webhook/crm-ingest";
+
+// Toggle des chips
+document.querySelectorAll('.check-chip input').forEach(input => {
+  input.addEventListener('change', e => {
+    const chip = e.target.closest('.check-chip');
+    if (e.target.type === 'radio') {
+      // Décocher toutes les chips du même name
+      document.querySelectorAll(`.check-chip input[name="${e.target.name}"]`).forEach(other => {
+        other.closest('.check-chip').classList.remove('checked');
+      });
+      chip.classList.add('checked');
+    } else {
+      chip.classList.toggle('checked', e.target.checked);
+    }
+  });
+});
+
+const form = document.getElementById('acqForm');
+const submitBtn = document.getElementById('submitBtn');
+const msg = document.getElementById('formMsg');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  msg.className = 'form-msg';
+  msg.textContent = '';
+
+  // Build payload
+  const fd = new FormData(form);
+  const types = fd.getAll('type_bien');
+  const atouts = fd.getAll('atouts');
+
+  if (types.length === 0) {
+    msg.className = 'form-msg error';
+    msg.textContent = '⚠️ Sélectionnez au moins un type de bien.';
+    return;
+  }
+
+  const payload = {
+    source: 'site_acq_form',
+    type: 'acquereur',
+    prenom: (fd.get('prenom') || '').trim(),
+    nom: (fd.get('nom') || '').trim(),
+    nom_complet: `${fd.get('prenom')} ${fd.get('nom')}`.trim(),
+    email: (fd.get('email') || '').trim().toLowerCase(),
+    telephone: (fd.get('telephone') || '').replace(/[^0-9+]/g, ''),
+    type_bien: types.join(', '),
+    ville: (fd.get('zone') || '').trim(),
+    budget: parseInt(fd.get('budget_max')) || null,
+    surface: parseInt(fd.get('surface_min')) || null,
+    notes: [
+      `Recherche : ${types.join(', ')} à ${fd.get('zone')}`,
+      `Budget max : ${fd.get('budget_max')}€${fd.get('apport') ? ` (apport ${fd.get('apport')}€)` : ''}`,
+      `Surface min : ${fd.get('surface_min') || '?'} m² / Pièces min : ${fd.get('pieces_min') || '?'} / Chambres min : ${fd.get('chambres_min') || '?'}`,
+      `Délai : ${fd.get('delai')}`,
+      `Financement : ${fd.get('financement')}`,
+      atouts.length ? `Critères : ${atouts.join(', ')}` : '',
+      (fd.get('notes') || '').trim() ? `Note : ${fd.get('notes')}` : ''
+    ].filter(Boolean).join(' | '),
+    custom: {
+      site_form: 'recherche_acq',
+      submitted_at: new Date().toISOString(),
+      delai: fd.get('delai'),
+      financement: fd.get('financement'),
+      pieces_min: fd.get('pieces_min'),
+      chambres_min: fd.get('chambres_min'),
+      apport: fd.get('apport'),
+      atouts: atouts,
+      types: types,
+      user_agent: navigator.userAgent,
+      referer: document.referrer
+    }
+  };
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Envoi en cours...';
+
+  try {
+    const r = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    msg.className = 'form-msg success';
+    msg.textContent = '✅ Demande envoyée. Je reviens vers vous sous 48h avec une sélection.';
+    form.reset();
+    document.querySelectorAll('.check-chip').forEach(c => c.classList.remove('checked'));
+    submitBtn.textContent = 'Envoyé ✓';
+    setTimeout(() => { window.location.href = '/acheter.html'; }, 3000);
+  } catch (err) {
+    msg.className = 'form-msg error';
+    msg.textContent = '❌ Erreur lors de l\'envoi. Réessayez ou contactez-moi directement au 07 58 63 11 70.';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Envoyer ma recherche →';
+  }
+});
+</script>
+
+</body>
+</html>

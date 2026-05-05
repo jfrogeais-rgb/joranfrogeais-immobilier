@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Témoignages clients — Joran Frogeais Efficity</title>
+<meta name="description" content="Découvrez ce que les vendeurs et acquéreurs disent de leur accompagnement avec Joran Frogeais, conseiller Efficity.">
+<link rel="icon" type="image/jpeg" href="assets/photos/logo-picto.jpg">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.testimonial {
+  background: var(--white);
+  padding: 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+.testimonial::before {
+  content: """;
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  font-size: 80px;
+  color: var(--efficity-green-light);
+  font-family: Georgia, serif;
+  line-height: 1;
+  z-index: 0;
+}
+.testimonial-content {
+  position: relative;
+  z-index: 1;
+  color: var(--gray-700);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--gray-200);
+  padding-top: 16px;
+}
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--efficity-green) 0%, var(--efficity-green-dark) 100%);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+.testimonial-meta { font-size: 14px; }
+.testimonial-name { font-weight: 700; color: var(--gray-900); }
+.testimonial-info { color: var(--gray-500); font-size: 13px; }
+
+.stars { color: #F2D900; font-size: 16px; margin-bottom: 12px; }
+
+@media (max-width: 800px) {
+  .testimonial-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/photos/logo-efficity-color.png" alt="Efficity">
+      <div class="nav-logo-text">
+        Joran Frogeais
+        <small>Conseiller immobilier Efficity</small>
+      </div>
+    </a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="vendre.html">Vendre</a>
+      <a href="acheter.html">Acheter</a>
+      <a href="biens.html">Mes biens</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="rejoindre.html">Rejoindre</a>
+      <a href="estimation.html" class="nav-cta">Estimation gratuite</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Ce que disent mes clients</h1>
+  <p>Vendeurs, acquéreurs, primo-accédants ou investisseurs — leurs retours <strong>chiffrés</strong> après avoir travaillé ensemble.</p>
+</header>
+
+<!-- BANDEAU STATS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="stats">
+      <div class="stat"><div class="stat-num">28</div><div class="stat-label">Mandats actuellement en commercialisation</div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">Ventes signées en 2025 (3 actes + 2 compromis + 1 offre)</div></div>
+      <div class="stat"><div class="stat-num">75 j</div><div class="stat-label">Délai moyen de vente</div></div>
+      <div class="stat"><div class="stat-num">100 %</div><div class="stat-label">Taux d'aboutissement compromis → acte</div></div>
+    </div>
+    <p style="text-align:center; font-size:13px; color:var(--gray-500); margin-top:16px;">Les avis ci-dessous sont en cours de collecte auprès de mes clients — les vrais retours remplaceront progressivement les exemples-types ci-dessous.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="testimonial-grid">
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-content">« Estimation juste à 5 000 € près, photos pro, dossier carré. Vendu en <strong>42 jours</strong> au prix demandé sans baisse. Joran a écarté 2 acquéreurs au financement bancal — le 3e, qualifié, est allé jusqu'à l'acte sans accroc. »</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">CL</div>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Exemple de retour vendeur — Betton</div>
+            <div class="testimonial-info">Maison familiale · vendue 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-content">« Très réactif (réponse mail <strong>sous 2h en semaine</strong>), transparent (il m'a montré les comparables vendus, pas seulement les annonces), et il ne survend pas. On a senti qu'il bossait vraiment pour nous, pas pour décrocher un mandat. »</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MD</div>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Exemple de retour vendeur — Rennes</div>
+            <div class="testimonial-info">Appartement T3 · vendu 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-content">« Joran nous a trouvé une maison <strong>avant qu'elle soit publiée sur SeLoger</strong> — un mandat d'un collègue Efficity. Dans nos critères, dans notre budget. <strong>3 visites, 1 offre acceptée</strong>. Suivi notaire impeccable. »</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JP</div>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Exemple de retour acquéreur — Cesson-Sévigné</div>
+            <div class="testimonial-info">Maison 4 pièces · acquise 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-content">« Première vente, j'avais peur de me faire avoir. Joran a tout expliqué étape par étape, défendu mon prix face à un acheteur qui négociait fort. <strong>Vendu 5 000 € au-dessus de ce que j'espérais</strong>, en <strong>68 jours</strong>. »</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AB</div>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Exemple de retour vendeuse — Pacé</div>
+            <div class="testimonial-info">Maison primo-vendeuse · vendue 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-content">« Disponible 7j/7, n'hésite pas à passer le soir <strong>après 19h</strong> ou le week-end pour les visites — c'est ce qui a fait la différence vs l'agence qu'on avait essayée avant (horaires bureau seulement). Sérieux et humain. »</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">VC</div>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Exemple de retour vendeur — La Chapelle-des-Fougeretz</div>
+            <div class="testimonial-info">Maison · vendue 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-content">« Investisseur, j'ai acheté <strong>2 biens via Joran en 2025</strong>. Bonne connaissance du marché (rendement net pré-calculé), anticipation des points juridiques (ASL, copro, DPE F/G). On gagne du temps, on évite les pièges. »</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">FP</div>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Exemple de retour investisseur — Rennes</div>
+            <div class="testimonial-info">Locatif × 2 · acquis 2025</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center; margin-top:40px; color:var(--gray-500); font-size:13px;">
+      <strong>Note de transparence :</strong> ces exemples illustrent les retours typiques de mes clients en attendant la collecte des avis nominatifs (en cours, je préfère ne pas publier sans accord écrit). Pour un retour direct, demandez-moi des références à vous appeler.<br><br>
+      Vous avez travaillé avec moi et souhaitez laisser un avis ?<br>
+      <a href="contact.html" style="color:var(--efficity-green-dark); font-weight:600;">Envoyez-moi votre retour →</a>
+    </p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-inner">
+    <h2>Envie de rejoindre cette liste ?</h2>
+    <p><strong>Estimation gratuite, réponse 24h.</strong> Vous saurez immédiatement où je peux vous aider — et si je ne peux pas, je vous le dis franchement.</p>
+    <a href="estimation.html" class="btn btn-primary">Démarrer mon estimation →</a>
+    <p style="margin-top:14px; font-size:13px; opacity:0.85;">Ou directement : <a href="tel:+33758631170" style="color:#fff; text-decoration:underline;">07 58 63 11 70</a> — réponse avant 19h.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/photos/logo-efficity-blanc.png" alt="Efficity">
+      <p>Joran Frogeais — Conseiller immobilier indépendant Efficity. Rennes, Bretagne et toute la France via le réseau Efficity.</p>
+    </div>
+    <div><h4>Services</h4><ul><li><a href="vendre.html">Vendre</a></li><li><a href="acheter.html">Acheter</a></li><li><a href="estimation.html">Estimation gratuite</a></li><li><a href="rejoindre.html">Rejoindre Efficity</a></li></ul></div>
+    <div><h4>À propos</h4><ul><li><a href="a-propos.html">Mon parcours</a></li><li><a href="contact.html">Contact</a></li><li><a href="temoignages.html">Témoignages</a></li><li><a href="conseils.html">Conseils</a></li></ul></div>
+    <div><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">© 2026 Joran Frogeais — Conseiller indépendant Efficity.</div>
+</footer>
+
+</body>
+</html>
