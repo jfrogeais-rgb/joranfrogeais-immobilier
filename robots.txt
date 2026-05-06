@@ -3,4 +3,4 @@ Allow: /
 Disallow: /mentions-legales.html
 Disallow: /confidentialite.html
 
-Sitemap: https://joranfrogeaisimmobilier.fr/sitemap.xml
+Sitemap: https://joranfrogeaisimmobilier.com/sitemap.xml

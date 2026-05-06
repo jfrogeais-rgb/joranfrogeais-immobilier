@@ -3,261 +3,162 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Conseils immobilier — Joran Frogeais Efficity</title>
-<meta name="description" content="Conseils pratiques pour vendre ou acheter votre bien : prix, financement, négociation, fiscalité. Par Joran Frogeais, conseiller Efficity.">
+<title>Conseils immobiliers — Joran Frogeais Efficity Rennes</title>
+<meta name="description" content="Conseils pratiques pour vendre, acheter, financer un bien immobilier à Rennes. Erreurs à éviter, prix de vente, financement acheteur, marché local.">
 <link rel="icon" type="image/jpeg" href="assets/photos/logo-picto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
-<style>
-.article-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-.article-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: all .2s;
-  display: flex;
-  flex-direction: column;
-}
-.article-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--efficity-green);
-}
-.article-card-header {
-  background: linear-gradient(135deg, var(--efficity-green) 0%, var(--efficity-green-dark) 100%);
-  padding: 24px;
-  color: var(--white);
-}
-.article-tag {
-  display: inline-block;
-  background: rgba(255,255,255,0.2);
-  padding: 4px 12px;
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-.article-card-header h3 {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.3;
-}
-.article-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-.article-card-body p {
-  color: var(--gray-700);
-  font-size: 14px;
-  margin-bottom: 16px;
-  flex: 1;
-}
-.article-meta {
-  font-size: 13px;
-  color: var(--gray-500);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.article-link {
-  color: var(--efficity-green-dark);
-  font-weight: 600;
-  text-decoration: none;
-}
-@media (max-width: 800px) { .article-grid { grid-template-columns: 1fr; } }
-</style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/photos/logo-efficity-color.png" alt="Efficity">
-      <div class="nav-logo-text">
-        Joran Frogeais
-        <small>Conseiller immobilier Efficity</small>
-      </div>
-    </a>
-    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
-    <div class="nav-links">
-      <a href="index.html">Accueil</a>
-      <a href="vendre.html">Vendre</a>
-      <a href="acheter.html">Acheter</a>
-      <a href="biens.html">Mes biens</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-      <a href="rejoindre.html">Rejoindre</a>
-      <a href="estimation.html" class="nav-cta">Estimation gratuite</a>
-    </div>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><span class="nav-logo-mark">JF</span><span class="nav-logo-text">Joran Frogeais<small>Conseiller Efficity · Rennes</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="vendre.html">Vendre</a>
+    <a href="acheter.html">Acheter</a>
+    <a href="biens.html">Mes biens</a>
+    <a href="conseils.html" class="active">Conseils</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="estimation.html" class="nav-cta">Estimation gratuite<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
   </div>
-</nav>
+</div></nav>
 
-<header class="page-header">
-  <h1>Conseils immobilier</h1>
-  <p>Articles pratiques pour bien vendre et bien acheter — <strong>chiffres concrets, pas de baratin</strong>, basés sur les outils Efficity et 28 mandats actifs sur le terrain.</p>
-</header>
-
-<!-- 10 PRESTATIONS -->
 <section class="section">
   <div class="section-inner">
-    <h2 class="section-title">Mes 10 prestations vendeur · Mes 10 prestations acquéreur</h2>
-    <p class="section-subtitle">La checklist complète — chaque étape comptée, rien laissé au hasard. Si une case manque, la transaction risque de se fissurer.</p>
-    <div class="content-grid">
-      <div class="content-card">
-        <h3>🏷️ Les 10 prestations vendeur</h3>
-        <ol style="margin:8px 0 0 18px; line-height:1.8; font-size:14px;">
-          <li>Analyse des besoins (motivation, calendrier)</li>
-          <li>Politique tarifaire (comparables vendus + tension acquéreurs)</li>
-          <li>Mise en valeur du bien (photos pro, conseils travaux)</li>
-          <li>Stratégie marketing (plan en 14 étapes)</li>
-          <li>Recevoir une offre (qualification financement)</li>
-          <li>Négocier la vente (défense de votre prix)</li>
-          <li>Mise en vente (feuille post-contractuelle)</li>
-          <li>Préparation du compromis (docs, conseils)</li>
-          <li>Compromis de vente (résolution problèmes dernière minute)</li>
-          <li>Après la vente (déménagement, suivi)</li>
-        </ol>
-      </div>
-      <div class="content-card">
-        <h3>🔑 Les 10 prestations acquéreur</h3>
-        <ol style="margin:8px 0 0 18px; line-height:1.8; font-size:14px;">
-          <li>Analyse besoins (désirs + cadre de vie réel)</li>
-          <li>Présélection / autorisation préalable banque</li>
-          <li>Infos quartier (écoles, transports, urbanisme)</li>
-          <li>Recherche bien (mandats + réseau Efficity)</li>
-          <li>Faire une offre (conseils stratégiques)</li>
-          <li>Négocier l'achat</li>
-          <li>Coordination avec le vendeur</li>
-          <li>Préparation du compromis</li>
-          <li>Compromis de vente (lecture et négo)</li>
-          <li>Après l'achat (emménagement, suivi)</li>
-        </ol>
-      </div>
+    <div class="section-head reveal" style="display:block;text-align:center">
+      <span class="eyebrow" style="display:inline-flex">Guide pratique</span>
+      <h1 class="h-section">Conseils immobiliers <em style="font-style:italic;color:var(--efficity-green-dark);font-family:var(--font-display)">terrain</em>.</h1>
+      <p class="lead" style="max-width:560px;margin:var(--sp-4) auto 0">Quatre sujets concrets, écrits depuis l'expérience de mes mandats à Rennes et alentours.</p>
     </div>
   </div>
 </section>
 
-<section class="section section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Articles à lire</h2>
-    <div class="article-grid">
+<section class="section section-tight">
+  <div class="layout-with-toc">
+    <aside class="toc">
+      <h4>Sommaire</h4>
+      <ul>
+        <li><a href="#erreurs-vente">Erreurs à éviter en vente</a></li>
+        <li><a href="#prix-vente">Fixer le bon prix</a></li>
+        <li><a href="#marche-rennes">Marché Rennes</a></li>
+        <li><a href="#financement">Financement acheteur</a></li>
+      </ul>
+    </aside>
 
-      <a href="conseils-prix-vente.html" class="article-card" style="text-decoration:none; color:inherit;">
-        <div class="article-card-header">
-          <span class="article-tag">Vendre</span>
-          <h3>Comment fixer le bon prix de vente ?</h3>
-        </div>
-        <div class="article-card-body">
-          <p>Le prix juste, c'est celui qui attire <strong>5 visites qualifiées en 30 jours</strong>. Voici la méthode (comparables vendus + tension acquéreurs Efficity) pour ne pas perdre 6 mois à cause d'une surcote de 5 %.</p>
-          <div class="article-meta">
-            <span>5 min de lecture</span>
-            <span class="article-link">Lire →</span>
-          </div>
-        </div>
-      </a>
+    <div class="article-content">
 
-      <a href="conseils-erreurs-vente.html" class="article-card" style="text-decoration:none; color:inherit;">
-        <div class="article-card-header">
-          <span class="article-tag">Vendre</span>
-          <h3>Les 5 erreurs à éviter en vendant son bien</h3>
-        </div>
-        <div class="article-card-body">
-          <p>Surévaluer (+ 6 mois), mal photographier (- 30 % de visites), refuser les premières offres (rarement les meilleures à dépasser), DPE non préparé (- 5 % final). Les pièges classiques chiffrés.</p>
-          <div class="article-meta">
-            <span>4 min de lecture</span>
-            <span class="article-link">Lire →</span>
-          </div>
-        </div>
-      </a>
+      <article class="article-section reveal" id="erreurs-vente">
+        <h2>Erreurs à éviter quand vous vendez</h2>
+        <p>Vendre un bien sans préparation, c'est perdre de 5 à 15 % du prix final. Les erreurs les plus coûteuses sont rarement techniques, elles sont stratégiques.</p>
 
-      <a href="conseils-financement-acheteur.html" class="article-card" style="text-decoration:none; color:inherit;">
-        <div class="article-card-header">
-          <span class="article-tag">Acheter</span>
-          <h3>Acheteur : comment bien préparer son financement</h3>
-        </div>
-        <div class="article-card-body">
-          <p>Apport (10 % minimum + frais), taux (TAEG vs nominal), durée (impact sur capacité), capacité d'emprunt (33 % règle d'or). Ce que la banque regarde et comment être <strong>autorisation préalable</strong> avant de visiter.</p>
-          <div class="article-meta">
-            <span>6 min de lecture</span>
-            <span class="article-link">Lire →</span>
-          </div>
-        </div>
-      </a>
+        <h3>Surévaluer le prix au démarrage</h3>
+        <p>Un prix gonflé fait fuir les acquéreurs sérieux et donne au bien une mauvaise image. Au bout de 90 jours sans visite, vous baissez le prix sous la pression — mais le mal est fait. Le marché vous a déjà jugé.</p>
 
-      <a href="conseils-marche-rennes.html" class="article-card" style="text-decoration:none; color:inherit;">
-        <div class="article-card-header">
-          <span class="article-tag">Marché</span>
-          <h3>Le marché immobilier rennais en 2026</h3>
-        </div>
-        <div class="article-card-body">
-          <p>Tendances de prix par secteur, indice de tension acquéreurs, profils types, délais médians. La photo du marché actuel à Rennes et son agglomération — basée sur les outils Efficity.</p>
-          <div class="article-meta">
-            <span>5 min de lecture</span>
-            <span class="article-link">Lire →</span>
-          </div>
-        </div>
-      </a>
+        <h3>Photos amateur ou logement non préparé</h3>
+        <p>Un acquéreur décide en 8 secondes sur la première photo s'il clique ou pas. Photos floues, déco datée, désordre visible : votre annonce passe à la trappe. Un reportage pro coûte peu, rapporte beaucoup.</p>
+
+        <h3>Diffusion limitée à un seul portail</h3>
+        <p>SeLoger seul ou Le Bon Coin seul, c'est insuffisant. Chaque portail a son audience. Une diffusion multi-supports (80+ sites) double minimum le nombre de contacts qualifiés.</p>
+
+        <div class="callout">À retenir : un mandat exclusif bien diffusé se vend en moyenne 30 % plus vite et 4 % plus cher qu'un mandat simple éclaté entre 3 agences.</div>
+
+        <h3>Refuser toute négociation</h3>
+        <p>Un acquéreur qui propose 5 % en dessous est sérieux. Le claquer fait perdre une vraie opportunité. Mieux vaut négocier intelligemment que repartir à zéro avec un nouveau lead trois mois plus tard.</p>
+      </article>
+
+      <article class="article-section reveal" id="prix-vente">
+        <h2>Fixer le bon prix de vente</h2>
+        <p>Le prix juste, c'est celui qui fait venir 3 à 5 acquéreurs sérieux dans le premier mois. Ni plus haut, ni plus bas.</p>
+
+        <h3>Méthodologie d'estimation rigoureuse</h3>
+        <p>Une bonne estimation s'appuie sur trois sources :</p>
+        <ul>
+          <li>Les transactions récentes du même secteur (data DVF officielle, comparables Efficity)</li>
+          <li>La tension acquéreurs locale (combien de demandes en attente, à quel prix)</li>
+          <li>L'état réel du bien observé en visite physique (pas un algo en ligne)</li>
+        </ul>
+
+        <h3>Pourquoi les estimations en ligne se trompent</h3>
+        <p>Les estimateurs algorithmiques se basent sur 5 paramètres : surface, pièces, code postal, type, année. C'est insuffisant. Ils ratent l'orientation, les vues, la qualité de rénovation, l'environnement immédiat (école, commerces, nuisances). Marge d'erreur fréquente : 15 à 25 %.</p>
+
+        <div class="callout">Sur mes mandats, l'écart moyen entre estimation initiale et prix de vente final est inférieur à 5 %.</div>
+      </article>
+
+      <article class="article-section reveal" id="marche-rennes">
+        <h2>Marché immobilier Rennes et Pays de Rennes</h2>
+        <p>Le marché rennais reste actif mais sélectif. Les acquéreurs comparent beaucoup et se déplacent moins qu'avant. Voici les tendances 2026.</p>
+
+        <h3>Zones tendues vs zones rurales</h3>
+        <p>Rennes Centre, Bruz, Cesson, Chantepie restent des zones à forte tension : biens bien positionnés vendus en moins de 60 jours. À l'inverse, les zones rurales (Princé, Pléchâtel, Bain-de-Bretagne, Guipry-Messac) demandent une stratégie de diffusion plus large et une qualification fine des acquéreurs.</p>
+
+        <h3>Profil acquéreur 2026</h3>
+        <p>Les acquéreurs sont plus exigeants sur trois critères :</p>
+        <ul>
+          <li>DPE (le D devient un seuil psychologique, en dessous c'est un frein)</li>
+          <li>Travaux à prévoir (réticence forte à l'idée de devoir investir au-delà du prix d'achat)</li>
+          <li>Charges et fiscalité (taxe foncière, copropriété, frais cachés)</li>
+        </ul>
+
+        <h3>Calendrier de vente optimal</h3>
+        <p>Mars-juin et septembre-novembre sont les fenêtres les plus actives. Décembre-février reste possible mais demande une qualification très ciblée des contacts.</p>
+      </article>
+
+      <article class="article-section reveal" id="financement">
+        <h2>Financement acheteur, comment se préparer</h2>
+        <p>Un dossier de financement bien préparé, c'est 30 % de chances en plus de voir l'offre acceptée par le vendeur, et un délai de signature raccourci.</p>
+
+        <h3>Avant de visiter, calculez votre capacité réelle</h3>
+        <p>Trois éléments à valider :</p>
+        <ul>
+          <li>Apport disponible (10 % minimum recommandé en 2026, 15-20 % idéal)</li>
+          <li>Mensualité maximale supportable (33 % d'endettement max)</li>
+          <li>Frais annexes : notaire (7-8 % en ancien), travaux estimés, déménagement</li>
+        </ul>
+
+        <h3>Pré-accord bancaire avant l'offre</h3>
+        <p>Un acquéreur avec pré-accord est pris au sérieux. Sans pré-accord, votre offre passe après les autres. Démarche : prendre RDV avec sa banque OU un courtier 2-3 semaines avant la phase active de recherche.</p>
+
+        <div class="callout">Je peux vous orienter vers des courtiers locaux compétents. Pas de commission croisée, juste une mise en relation.</div>
+
+        <h3>Conditions suspensives bien rédigées</h3>
+        <p>L'offre d'achat et le compromis incluent des conditions suspensives (financement, urbanisme, droit de préemption…). Mal rédigées, elles peuvent vous coûter le dépôt de garantie en cas de désistement. Un conseiller compétent vous protège sur ce point.</p>
+      </article>
 
     </div>
   </div>
 </section>
 
-<!-- LES 6 MYTHES -->
-<section class="section">
-  <div class="section-inner">
-    <h2 class="section-title">Les 6 mythes du vendeur immobilier</h2>
-    <p class="section-subtitle">Les croyances qui font perdre du temps et de l'argent — déclinées au vendeur particulier 2026. Si l'une vous bloque, on en parle.</p>
-    <div class="content-grid">
-      <div class="content-card">
-        <h3>1. « Mon bien vaut plus que ce que dit le marché »</h3>
-        <p><strong>Vérité :</strong> ce qui détermine le prix, c'est ce que les acquéreurs sont prêts à payer aujourd'hui. Sur certains secteurs, l'écart entre prix affichés et prix vendus dépasse <strong>2 ×</strong>. Les ventes réelles parlent pour vous.</p>
-      </div>
-      <div class="content-card">
-        <h3>2. « Mettre cher pour avoir de la marge de négo »</h3>
-        <p><strong>Vérité :</strong> un bien surcoté reste affiché. Sans visites, pas de négo. <strong>Après 60 jours sans visite, vous perdez 5 à 10 % du prix final.</strong> Mieux vaut afficher juste et tenir.</p>
-      </div>
-      <div class="content-card">
-        <h3>3. « Je peux vendre seul, ça coûtera moins cher »</h3>
-        <p><strong>Vérité :</strong> la majorité des vendeurs travaillent avec un seul agent. Vendre seul = moins de visibilité (3 portails vs 80+), moins de qualification (compromis qui tombent), et souvent un prix final inférieur aux honoraires économisés.</p>
-      </div>
-      <div class="content-card">
-        <h3>4. « Toutes les agences sont pareilles »</h3>
-        <p><strong>Vérité :</strong> les différences sont mesurables — % d'honoraires, nombre de portails (3 à 80+), part conseiller (30 % vs 70 %), réseau (local vs 2 500 conseillers nationaux), garanties (Carte T, GALIAN). À comparer comme un devis.</p>
-      </div>
-      <div class="content-card">
-        <h3>5. « Je n'ai pas envie de me lancer maintenant »</h3>
-        <p><strong>Vérité :</strong> attendre = laisser le marché décider à votre place. Le bon moment pour estimer, c'est <strong>maintenant</strong>. L'estimation est gratuite, sans engagement, et vous donne une base de décision réelle.</p>
-      </div>
-      <div class="content-card">
-        <h3>6. « Si je n'aboutis pas à la vente, c'est négatif »</h3>
-        <p><strong>Vérité :</strong> ne PAS tenter, c'est négatif. Tester le marché à un prix juste, c'est gagner 90 jours d'information précieuse — sur la tension réelle, les profils acquéreurs, l'écart prix demandé/proposé.</p>
-      </div>
-    </div>
+<section class="cta">
+  <div class="cta-inner reveal">
+    <h2 class="h-section">Une question précise sur votre projet ?</h2>
+    <p class="lead">15 min de téléphone pour vous orienter, sans engagement.</p>
+    <a href="contact.html" class="btn btn-primary">Me contacter<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <div class="cta-meta">Direct par téléphone : <a href="tel:+33758631170">07 58 63 11 70</a></div>
   </div>
 </section>
 
-<section class="cta-section">
-  <div class="section-inner">
-    <h2>Une question sur votre projet ?</h2>
-    <p>Posez-la moi directement, <strong>je réponds personnellement sous 24h</strong> — pas de chatbot, pas de standard.</p>
-    <a href="contact.html" class="btn btn-primary">Me contacter →</a>
-    <p style="margin-top:14px; font-size:13px; opacity:0.85;">Ou directement : <a href="tel:+33758631170" style="color:#fff; text-decoration:underline;">07 58 63 11 70</a> — réponse avant 19h.</p>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-brand">
+    <div class="nav-logo"><span class="nav-logo-mark">JF</span><span class="nav-logo-text">Joran Frogeais<small>Conseiller Efficity · Rennes</small></span></div>
+    <p>Conseiller immobilier indépendant Efficity. Rennes, Bretagne et toute la France via le réseau Efficity de 2 500 conseillers.</p>
   </div>
-</section>
+  <div><h4>Services</h4><ul><li><a href="vendre.html">Vendre un bien</a></li><li><a href="acheter.html">Acheter un bien</a></li><li><a href="estimation.html">Estimation gratuite</a></li><li><a href="rejoindre.html">Rejoindre Efficity</a></li></ul></div>
+  <div><h4>Ressources</h4><ul><li><a href="biens.html">Mes biens</a></li><li><a href="conseils.html">Conseils</a></li><li><a href="temoignages.html">Témoignages</a></li><li><a href="a-propos.html">À propos</a></li></ul></div>
+  <div><h4>Contact</h4><ul><li><a href="tel:+33758631170">07 58 63 11 70</a></li><li><a href="mailto:jfrogeais@efficity.com">jfrogeais@efficity.com</a></li><li><a href="contact.html">Formulaire de contact</a></li><li><a href="mentions-legales.html">Mentions légales</a></li></ul></div>
+</div><div class="footer-bottom">
+  <span>© <span data-year>2026</span> Joran Frogeais — Conseiller indépendant Efficity</span>
+  <span><a href="confidentialite.html">Confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a></span>
+</div></footer>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="assets/photos/logo-efficity-blanc.png" alt="Efficity">
-      <p>Joran Frogeais — Conseiller immobilier indépendant Efficity. Rennes, Bretagne et toute la France via le réseau Efficity.</p>
-    </div>
-    <div><h4>Services</h4><ul><li><a href="vendre.html">Vendre</a></li><li><a href="acheter.html">Acheter</a></li><li><a href="estimation.html">Estimation gratuite</a></li><li><a href="rejoindre.html">Rejoindre Efficity</a></li></ul></div>
-    <div><h4>À propos</h4><ul><li><a href="a-propos.html">Mon parcours</a></li><li><a href="contact.html">Contact</a></li><li><a href="temoignages.html">Témoignages</a></li><li><a href="conseils.html">Conseils</a></li></ul></div>
-    <div><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul></div>
-  </div>
-  <div class="footer-bottom">© 2026 Joran Frogeais — Conseiller indépendant Efficity.</div>
-</footer>
+<div class="mobile-cta">
+  <a href="tel:+33758631170" class="btn btn-ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Appeler</a>
+  <a href="estimation.html" class="btn btn-primary">Estimation gratuite</a>
+</div>
 
+<script src="assets/js/script.js" defer></script>
 </body>
 </html>

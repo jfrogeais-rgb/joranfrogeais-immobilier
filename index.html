@@ -3,64 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joran Frogeais — Conseiller immobilier Efficity</title>
-<meta name="description" content="Conseiller immobilier indépendant Efficity. Estimation gratuite, accompagnement vente et achat. Diffusion sur 80+ sites et 2500 conseillers Efficity.">
+<title>Joran Frogeais — Conseiller immobilier Efficity à Rennes & Betton</title>
+<meta name="description" content="Conseiller immobilier indépendant Efficity à Rennes. Estimation gratuite, accompagnement vente et achat. 28 mandats actifs, vente moyenne en 75 jours.">
+<meta name="theme-color" content="#0a0a0a">
 <meta property="og:title" content="Joran Frogeais — Conseiller immobilier Efficity">
-<meta property="og:description" content="Estimation gratuite et accompagnement personnalisé pour votre projet immobilier, partout en France via le réseau Efficity.">
+<meta property="og:description" content="Estimation gratuite et accompagnement personnalisé pour votre projet immobilier.">
 <meta property="og:image" content="assets/photos/joran-agent.png">
+<meta property="og:type" content="website">
 <link rel="icon" type="image/jpeg" href="assets/photos/logo-picto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ============ NAV ============ -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="assets/photos/logo-efficity-color.png" alt="Efficity">
-      <div class="nav-logo-text">
+      <span class="nav-logo-mark">JF</span>
+      <span class="nav-logo-text">
         Joran Frogeais
-        <small>Conseiller immobilier Efficity</small>
-      </div>
+        <small>Conseiller Efficity · Rennes</small>
+      </span>
     </a>
-    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
     <div class="nav-links">
       <a href="index.html" class="active">Accueil</a>
       <a href="vendre.html">Vendre</a>
       <a href="acheter.html">Acheter</a>
       <a href="biens.html">Mes biens</a>
+      <a href="conseils.html">Conseils</a>
       <a href="a-propos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-      <a href="rejoindre.html">Rejoindre</a>
-      <a href="estimation.html" class="nav-cta">Estimation gratuite</a>
+      <a href="estimation.html" class="nav-cta">
+        Estimation gratuite
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-inner">
-    <div>
-      <h1>Votre projet immobilier <span class="accent">accompagné de A à Z.</span></h1>
-      <p class="lead"><strong>28 mandats actifs · 6 ventes en cours · estimation chiffrée par mail dans la journée.</strong> Conseiller indépendant Efficity, je vends vos biens en moyenne en 75 jours grâce au réseau de 2 500 conseillers et 80+ portails immobiliers.</p>
+    <div class="hero-text">
+      <span class="eyebrow">Conseiller indépendant Efficity</span>
+      <h1 class="h-display">Votre projet immobilier, <em>accompagné de bout en bout.</em></h1>
+      <p class="lead">28 mandats en commercialisation, vente moyenne en 75 jours, estimation chiffrée par mail dans la journée. Réseau de 2 500 conseillers et 80+ portails de diffusion.</p>
       <div class="hero-cta-row">
-        <a href="estimation.html" class="btn btn-primary">Estimer mon bien — réponse 24h →</a>
-        <a href="contact.html" class="btn btn-secondary">Me contacter</a>
+        <a href="estimation.html" class="btn btn-primary">
+          Estimer mon bien
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="contact.html" class="btn btn-ghost">Me contacter</a>
       </div>
-      <p style="margin-top:14px; font-size:13px; color:#666;">✅ Sans engagement · ✅ Carte T CPI 7501 2015 000 002 025 · ✅ Garantie GALIAN</p>
+      <div class="hero-meta">
+        <span class="hero-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Sans engagement
+        </span>
+        <span class="hero-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Carte T CPI 7501 2015 000 002 025
+        </span>
+        <span class="hero-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Garantie GALIAN
+        </span>
+      </div>
     </div>
-    <div class="hero-photo">
-      <img src="assets/photos/joran-agent.png" alt="Joran Frogeais">
-      <div class="hero-badge">
-        <span class="dot"></span>
-        Disponible cette semaine
+    <div class="hero-visual">
+      <img src="assets/photos/joran-agent.png" alt="Joran Frogeais, conseiller immobilier Efficity à Rennes" loading="eager">
+      <div class="hero-card">
+        <span class="hero-card-dot"></span>
+        <div class="hero-card-text">
+          Disponible cette semaine
+          <small>Réponse sous 24 h ouvrées</small>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="section">
+<!-- ============ STATS ============ -->
+<section class="section section-tight">
   <div class="section-inner">
     <div class="stats">
       <div class="stat">
@@ -68,182 +98,301 @@
         <div class="stat-label">Mandats actuellement en commercialisation</div>
       </div>
       <div class="stat">
-        <div class="stat-num">75 j</div>
+        <div class="stat-num">75<small>j</small></div>
         <div class="stat-label">Délai moyen de vente sur mes mandats</div>
       </div>
       <div class="stat">
-        <div class="stat-num">80+</div>
+        <div class="stat-num">80<small>+</small></div>
         <div class="stat-label">Portails de diffusion (SeLoger, LBC, Bien'ici…)</div>
       </div>
       <div class="stat">
         <div class="stat-num">2 500</div>
-        <div class="stat-label">Conseillers Efficity = partage acquéreurs national</div>
+        <div class="stat-label">Conseillers Efficity, partage acquéreurs national</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PILIERS -->
-<section class="section section-alt">
+<!-- ============ PILIERS ============ -->
+<section class="section section-warm">
   <div class="section-inner">
-    <h2 class="section-title">Pourquoi choisir un conseiller Efficity ?</h2>
-    <p class="section-subtitle">Un réseau national, une méthode éprouvée, et un interlocuteur unique pour toute la durée de votre projet.</p>
-    <div class="features-grid">
-      <div class="feature">
-        <div class="feature-icon">🎯</div>
-        <h3>Estimation juste</h3>
-        <p>Une estimation rigoureuse basée sur les transactions récentes du secteur, la tension du marché local et les comparables. Pas de surcote pour vous séduire.</p>
+    <div class="section-head reveal">
+      <div class="section-head-text">
+        <span class="eyebrow">La méthode Efficity</span>
+        <h2 class="h-section">Une approche structurée, pas du marketing.</h2>
+        <p class="lead">Trois piliers concrets qui font la différence entre une vente longue et une vente bien menée.</p>
       </div>
-      <div class="feature">
-        <div class="feature-icon">📡</div>
+    </div>
+    <div class="features">
+      <div class="feature reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <h3>Estimation juste, pas flatteuse</h3>
+        <p>Méthodologie Efficity basée sur les transactions récentes du secteur, la tension acquéreurs et la visite physique. Précision ±5 % sur le prix final.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+        </div>
         <h3>Diffusion maximale</h3>
-        <p>Votre bien diffusé sur SeLoger, Leboncoin, Bien'ici, Logic-Immo et plus de 80 sites, ainsi qu'auprès de 2500 conseillers Efficity avec partage d'acquéreurs.</p>
+        <p>SeLoger, Le Bon Coin, Bien'ici, Logic-Immo, Le Figaro Immo, Ouest-France et 80+ sites. Diffusion automatique au réseau Efficity national.</p>
       </div>
-      <div class="feature">
-        <div class="feature-icon">🤝</div>
+      <div class="feature reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>
+        </div>
         <h3>Accompagnement complet</h3>
-        <p>Un seul interlocuteur de l'estimation à la signature : visites, négociation, dossier, compromis, financement. Disponible 7j/7.</p>
+        <p>Un seul interlocuteur de l'estimation à la signature notaire. Visites, négociation, dossier, financement. Disponible soir et week-end.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VS AUTRES OPTIONS -->
+<!-- ============ COMPARE VS AUTRES ============ -->
 <section class="section">
   <div class="section-inner">
-    <h2 class="section-title">Pourquoi moi plutôt qu'une autre option ?</h2>
-    <p class="section-subtitle">Trois alternatives, trois réalités. Je joue cartes sur table.</p>
-    <div class="content-grid">
-      <div class="content-card">
-        <h3>🤖 Vs estimation en ligne (algo)</h3>
-        <ul>
-          <li>❌ 5 paramètres seulement, pas de visite physique</li>
-          <li>❌ Pas de tension acquéreurs intégrée</li>
-          <li>✅ <strong>Moi</strong> : méthodologie Efficity (comparables vendus + tension acquéreurs + visite + photos) = estimation à ±5%</li>
+    <div class="section-head reveal">
+      <div class="section-head-text">
+        <span class="eyebrow">Comparaison</span>
+        <h2 class="h-section">Pourquoi moi plutôt qu'une autre option.</h2>
+        <p class="lead">Trois alternatives, trois réalités. Cartes sur table.</p>
+      </div>
+    </div>
+    <div class="compare">
+
+      <div class="compare-card reveal">
+        <div class="compare-card-head">
+          <span class="compare-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+          </span>
+          <h3>Estimation en ligne (algo)</h3>
+        </div>
+        <ul class="compare-list">
+          <li class="neg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>5 paramètres seulement, pas de visite physique</li>
+          <li class="neg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Aucune analyse de la tension acquéreurs locale</li>
+          <li class="neg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Marge d'erreur fréquente de 15 à 25 %</li>
         </ul>
       </div>
-      <div class="content-card">
-        <h3>🏢 Vs agence classique</h3>
-        <ul>
-          <li>❌ Honoraires souvent ≥ 5%, conseiller payé 30% maxi</li>
-          <li>❌ Disponibilité bureau = horaires limités</li>
-          <li>✅ <strong>Moi</strong> : honoraires alignés, je touche 70% donc je m'investis 2× plus, dispo soir et week-end</li>
+
+      <div class="compare-card reveal">
+        <div class="compare-card-head">
+          <span class="compare-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
+          </span>
+          <h3>Agence vitrine classique</h3>
+        </div>
+        <ul class="compare-list">
+          <li class="neg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Honoraires souvent ≥ 5 %, conseiller payé 30 %</li>
+          <li class="neg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Disponibilité limitée aux horaires de bureau</li>
+          <li class="neg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Carnet d'acquéreurs limité au local</li>
         </ul>
       </div>
-      <div class="content-card">
-        <h3>👤 Vs autre indépendant non-réseau</h3>
-        <ul>
-          <li>❌ Bien limité à son carnet local</li>
-          <li>❌ Pas d'outils mutualisés (CRM, formation)</li>
-          <li>✅ <strong>Moi via Efficity</strong> : 2 500 conseillers en France, partage automatique d'acquéreurs, garantie GALIAN, Carte T</li>
+
+      <div class="compare-card highlight reveal">
+        <div class="compare-card-head">
+          <span class="compare-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7L9 18l-5-5"/></svg>
+          </span>
+          <h3>Moi, via Efficity</h3>
+        </div>
+        <ul class="compare-list">
+          <li class="pos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>Estimation rigoureuse à ±5 %, méthodologie validée</li>
+          <li class="pos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>Honoraires alignés, je touche 70 %, je m'investis</li>
+          <li class="pos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>Disponible soir et week-end, réseau national 2 500</li>
         </ul>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="section section-alt">
+<!-- ============ PROCESS ============ -->
+<section class="section section-warm">
   <div class="section-inner">
-    <h2 class="section-title">Comment ça se passe ?</h2>
-    <p class="section-subtitle">Une démarche simple, transparente et sans engagement.</p>
+    <div class="section-head reveal">
+      <div class="section-head-text">
+        <span class="eyebrow">Comment on travaille ensemble</span>
+        <h2 class="h-section">Trois étapes, sans engagement.</h2>
+      </div>
+    </div>
     <div class="steps">
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">1</div>
         <h3>Estimation gratuite</h3>
-        <p>Vous remplissez le formulaire en ligne (5 min). Vous recevez une estimation chiffrée par mail dans la journée.</p>
+        <p>Vous remplissez le formulaire en ligne en 5 minutes. Vous recevez une estimation chiffrée par mail dans la journée.</p>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">2</div>
-        <h3>Visite et conseil</h3>
-        <p>On se rencontre chez vous pour affiner l'estimation, identifier les points forts du bien, et définir une stratégie de vente.</p>
+        <h3>Visite et stratégie</h3>
+        <p>On se rencontre chez vous pour affiner l'estimation, identifier les points forts et définir la stratégie commerciale.</p>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">3</div>
         <h3>Mise en vente</h3>
-        <p>Photos pro, annonce optimisée, diffusion 80+ sites, gestion des visites et négociation jusqu'à la signature chez le notaire.</p>
+        <p>Photos professionnelles, annonce optimisée, diffusion 80+ sites, gestion des visites et négociation jusqu'à la signature.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PREUVES -->
-<section class="section section-alt">
+<!-- ============ TÉMOIGNAGES PREVIEW ============ -->
+<section class="section">
   <div class="section-inner">
-    <h2 class="section-title">Garanties et partenaires</h2>
-    <p class="section-subtitle">Vous travaillez avec un professionnel encadré, pas avec un freelance improvisé.</p>
-    <div class="features-grid">
-      <div class="feature">
-        <div class="feature-icon">🛡️</div>
-        <h3>Carte T CPI 7501 2015 000 002 025</h3>
-        <p>Délivrée par la CCI Paris IDF — j'ai le droit légal d'exercer comme intermédiaire en transactions immobilières.</p>
+    <div class="section-head reveal">
+      <div class="section-head-text">
+        <span class="eyebrow">Ils ont vendu avec moi</span>
+        <h2 class="h-section">La parole à mes clients.</h2>
       </div>
-      <div class="feature">
-        <div class="feature-icon">🏛️</div>
-        <h3>Garantie financière GALIAN</h3>
-        <p>Vos fonds (séquestre, dépôt) sont sécurisés par une garantie d'assurance professionnelle.</p>
+      <a href="temoignages.html" class="btn-link">
+        Voir tous les témoignages
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+    <div class="testimonials">
+      <div class="testimonial reveal">
+        <p class="testimonial-quote">Joran a su estimer notre maison au juste prix et nous l'a vendue en moins de deux mois. Communication claire à chaque étape, on a vraiment senti qu'on n'était pas un dossier parmi d'autres.</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">CP</div>
+          <div>
+            <div class="testimonial-name">Cécile P.</div>
+            <div class="testimonial-context">Vente maison · Bain-de-Bretagne · 208 000 €</div>
+          </div>
+        </div>
       </div>
-      <div class="feature">
-        <div class="feature-icon">📋</div>
-        <h3>RSAC Rennes 933 366 148</h3>
-        <p>Inscrit au Registre Spécial des Agents Commerciaux — statut juridique propre et transparent.</p>
+      <div class="testimonial reveal">
+        <p class="testimonial-quote">Sérieux et disponible. Joran a fait visiter le bien plusieurs fois en soirée et le week-end, ce qui n'aurait pas été possible avec une agence classique. Vente conclue avec une offre proche du prix demandé.</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">RH</div>
+          <div>
+            <div class="testimonial-name">Rozenn H.</div>
+            <div class="testimonial-context">Vente maison · Pléchâtel · 205 000 €</div>
+          </div>
+        </div>
       </div>
     </div>
-    <p style="text-align:center; margin-top:24px; font-size:13px; color:#666;">
-      Diffusion sur : <strong>SeLoger · Leboncoin · Bien'ici · Logic-Immo · Le Figaro Immo · Ouest-France Immo</strong> + 70 autres portails
-    </p>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
+<!-- ============ TRUST / GARANTIES ============ -->
+<section class="section section-dark">
   <div class="section-inner">
-    <h2>Prêt à connaître la valeur de votre bien ?</h2>
-    <p>5 minutes pour remplir le formulaire. <strong>Estimation chiffrée par mail dans la journée.</strong> Sans engagement, vous décidez ensuite si vous voulez aller plus loin.</p>
-    <a href="estimation.html" class="btn btn-primary">Estimer mon bien — réponse 24h →</a>
-    <p style="margin-top:14px; font-size:13px; opacity:0.85;">Ou appelez-moi direct : <a href="tel:+33758631170" style="color:#fff; text-decoration:underline;">07 58 63 11 70</a> — je réponds avant 19h.</p>
+    <div class="section-head reveal">
+      <div class="section-head-text">
+        <span class="eyebrow">Garanties</span>
+        <h2 class="h-section">Vous travaillez avec un professionnel encadré.</h2>
+        <p class="lead">Pas un freelance improvisé. Statut juridique clair, garantie financière, formation continue.</p>
+      </div>
+    </div>
+    <div class="trust">
+      <div class="trust-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div>
+          <h4>Carte T CPI 7501 2015 000 002 025</h4>
+          <p>Délivrée par la CCI Paris IDF. Droit légal d'exercer comme intermédiaire en transactions immobilières.</p>
+        </div>
+      </div>
+      <div class="trust-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9h.01"/><path d="M9 13h.01"/><path d="M9 17h.01"/><path d="M15 9h.01"/><path d="M15 13h.01"/><path d="M15 17h.01"/></svg>
+        <div>
+          <h4>Garantie financière GALIAN</h4>
+          <p>Vos fonds (séquestre, dépôt) sont sécurisés par une garantie d'assurance professionnelle.</p>
+        </div>
+      </div>
+      <div class="trust-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <div>
+          <h4>RSAC Rennes 933 366 148</h4>
+          <p>Inscrit au Registre Spécial des Agents Commerciaux. Statut juridique propre et transparent.</p>
+        </div>
+      </div>
+    </div>
+    <div class="partners">
+      <div class="partners-label">Diffusion sur</div>
+      <div class="partners-list">
+        <span>SeLoger</span>
+        <span>Leboncoin</span>
+        <span>Bien'ici</span>
+        <span>Logic-Immo</span>
+        <span>Le Figaro Immo</span>
+        <span>Ouest-France Immo</span>
+        <span>+ 70 portails</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ============ CTA FINAL ============ -->
+<section class="cta">
+  <div class="cta-inner reveal">
+    <h2 class="h-section">Prêt à connaître la valeur réelle de votre bien ?</h2>
+    <p class="lead">5 minutes pour remplir le formulaire, estimation chiffrée par mail dans la journée. Vous décidez ensuite si vous voulez aller plus loin.</p>
+    <a href="estimation.html" class="btn btn-primary">
+      Estimer mon bien
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <div class="cta-meta">
+      Ou appelez-moi directement : <a href="tel:+33758631170">07 58 63 11 70</a> · réponse avant 19 h
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="assets/photos/logo-efficity-blanc.png" alt="Efficity">
-      <p>Joran Frogeais — Conseiller immobilier indépendant Efficity. Rennes, Bretagne et toute la France via le réseau Efficity.</p>
+      <div class="nav-logo">
+        <span class="nav-logo-mark">JF</span>
+        <span class="nav-logo-text">
+          Joran Frogeais
+          <small>Conseiller Efficity · Rennes</small>
+        </span>
+      </div>
+      <p>Conseiller immobilier indépendant Efficity. Rennes, Bretagne et toute la France via le réseau Efficity de 2 500 conseillers.</p>
     </div>
     <div>
       <h4>Services</h4>
       <ul>
-        <li><a href="vendre.html">Vendre</a></li>
-        <li><a href="acheter.html">Acheter</a></li>
+        <li><a href="vendre.html">Vendre un bien</a></li>
+        <li><a href="acheter.html">Acheter un bien</a></li>
         <li><a href="estimation.html">Estimation gratuite</a></li>
         <li><a href="rejoindre.html">Rejoindre Efficity</a></li>
       </ul>
     </div>
     <div>
-      <h4>À propos</h4>
+      <h4>Ressources</h4>
       <ul>
-        <li><a href="a-propos.html">Mon parcours</a></li>
-        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="biens.html">Mes biens</a></li>
         <li><a href="conseils.html">Conseils</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
       </ul>
     </div>
     <div>
-      <h4>Légal</h4>
+      <h4>Contact</h4>
       <ul>
         <li><a href="tel:+33758631170">07 58 63 11 70</a></li>
         <li><a href="mailto:jfrogeais@efficity.com">jfrogeais@efficity.com</a></li>
+        <li><a href="contact.html">Formulaire de contact</a></li>
         <li><a href="mentions-legales.html">Mentions légales</a></li>
-        <li><a href="confidentialite.html">Confidentialité</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    © 2026 Joran Frogeais — Conseiller indépendant Efficity. Tous droits réservés.
+    <span>© <span data-year>2026</span> Joran Frogeais — Conseiller indépendant Efficity</span>
+    <span><a href="confidentialite.html">Confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a></span>
   </div>
 </footer>
 
+<!-- ============ MOBILE STICKY CTA ============ -->
+<div class="mobile-cta">
+  <a href="tel:+33758631170" class="btn btn-ghost">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Appeler
+  </a>
+  <a href="estimation.html" class="btn btn-primary">Estimation gratuite</a>
+</div>
+
+<script src="assets/js/script.js" defer></script>
 </body>
 </html>

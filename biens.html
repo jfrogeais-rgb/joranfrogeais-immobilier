@@ -4,338 +4,166 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mes biens à vendre — Joran Frogeais Efficity</title>
-<meta name="description" content="Découvrez tous les biens immobiliers que je commercialise actuellement : maisons, appartements, terrains, locaux. Mise à jour temps réel.">
+<meta name="description" content="Découvrez tous les biens immobiliers que je commercialise actuellement à Rennes et alentours : maisons, appartements, terrains. Mise à jour temps réel.">
 <link rel="icon" type="image/jpeg" href="assets/photos/logo-picto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
-.biens-section { padding: 60px 24px; background: var(--gray-100); min-height: 600px; }
-.biens-inner { max-width: 1200px; margin: 0 auto; }
-
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 32px;
-  justify-content: center;
-}
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: var(--sp-6); justify-content: center; }
 .filter-chip {
-  padding: 10px 18px;
-  border: 1.5px solid var(--gray-300);
+  padding: 9px 18px;
+  border: 1px solid var(--line-strong);
   border-radius: 100px;
-  background: var(--white);
+  background: var(--paper);
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  transition: all .2s;
-  user-select: none;
+  color: var(--muted-strong);
+  transition: all 200ms ease;
+  font-family: inherit;
 }
-.filter-chip:hover { border-color: var(--efficity-green); }
-.filter-chip.active {
-  background: var(--efficity-green);
-  color: var(--white);
-  border-color: var(--efficity-green);
-}
-
-.biens-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.bien-card {
-  background: var(--white);
-  border-radius: var(--radius);
-  border: 1px solid var(--gray-200);
-  overflow: hidden;
-  transition: all .2s;
-  display: flex;
-  flex-direction: column;
-}
-.bien-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--efficity-green);
-}
-
-.bien-image {
-  background: linear-gradient(135deg, var(--efficity-green) 0%, var(--efficity-green-dark) 100%);
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 64px;
-  color: var(--white);
-  position: relative;
-  overflow: hidden;
-}
-.bien-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.bien-image .placeholder-icon {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 64px;
-}
-
-.bien-status {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: var(--white);
-  color: var(--gray-900);
-  padding: 4px 12px;
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 600;
-}
-.bien-status.actif { background: #D4F4D2; color: #2A6620; }
-.bien-status.offre { background: #FFF3CD; color: #8B6914; }
-.bien-status.attente { background: #FFE5E5; color: #C92A2A; }
-
-.bien-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-.bien-type {
-  font-size: 12px;
-  color: var(--efficity-green-dark);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 6px;
-}
-.bien-ville {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--gray-900);
-}
-.bien-prix {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--efficity-green-dark);
-  margin-bottom: 16px;
-}
-.bien-cta {
-  margin-top: auto;
-  display: inline-block;
-  padding: 10px 16px;
-  background: var(--gray-100);
-  color: var(--gray-900);
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: none;
-  transition: all .2s;
-}
-.bien-cta:hover {
-  background: var(--efficity-green);
-  color: var(--white);
-}
-
-.bien-loading {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--gray-500);
-}
-.bien-loading .spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid var(--gray-200);
-  border-top-color: var(--efficity-green);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-  margin: 0 auto 16px;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-
-.bien-empty {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--gray-500);
-}
-
-.biens-footer-cta {
-  text-align: center;
-  margin-top: 48px;
-  padding: 32px;
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--gray-200);
-}
-.biens-footer-cta p { margin-bottom: 16px; color: var(--gray-700); }
-
-.biens-count {
-  text-align: center;
-  margin-bottom: 24px;
-  color: var(--gray-700);
-  font-size: 15px;
-}
-
-@media (max-width: 900px) {
-  .biens-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-  .biens-grid { grid-template-columns: 1fr; }
-}
+.filter-chip:hover { border-color: var(--efficity-green); color: var(--ink); }
+.filter-chip.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.biens-count { text-align: center; font-size: 13px; color: var(--muted); margin-bottom: var(--sp-5); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
+.bien-photo .placeholder { display: grid; place-items: center; height: 100%; color: var(--efficity-green); }
+.bien-photo .placeholder svg { width: 48px; height: 48px; }
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/photos/logo-efficity-color.png" alt="Efficity">
-      <div class="nav-logo-text">
-        Joran Frogeais
-        <small>Conseiller immobilier Efficity</small>
-      </div>
-    </a>
-    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
-    <div class="nav-links">
-      <a href="index.html">Accueil</a>
-      <a href="vendre.html">Vendre</a>
-      <a href="acheter.html">Acheter</a>
-      <a href="biens.html" class="active">Mes biens</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-      <a href="rejoindre.html">Rejoindre</a>
-      <a href="estimation.html" class="nav-cta">Estimation gratuite</a>
-    </div>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><span class="nav-logo-mark">JF</span><span class="nav-logo-text">Joran Frogeais<small>Conseiller Efficity · Rennes</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="vendre.html">Vendre</a>
+    <a href="acheter.html">Acheter</a>
+    <a href="biens.html" class="active">Mes biens</a>
+    <a href="conseils.html">Conseils</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="estimation.html" class="nav-cta">Estimation gratuite<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
   </div>
-</nav>
+</div></nav>
 
-<header class="page-header">
-  <h1>Mes biens à vendre</h1>
-  <p>Tous les biens que je commercialise actuellement, à Rennes et alentours. Mise à jour automatique depuis mon CRM.</p>
-</header>
-
-<section class="biens-section">
-  <div class="biens-inner">
+<section class="section">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="section-head-text">
+        <span class="eyebrow">Catalogue</span>
+        <h1 class="h-section">Mes biens à vendre</h1>
+        <p class="lead">Tous les biens que je commercialise actuellement à Rennes et alentours. Mise à jour automatique depuis mon CRM.</p>
+      </div>
+    </div>
 
     <div class="filters" id="filters">
       <button class="filter-chip active" data-filter="all">Tous</button>
-      <button class="filter-chip" data-filter="maison">🏠 Maisons</button>
-      <button class="filter-chip" data-filter="appartement">🏢 Appartements</button>
-      <button class="filter-chip" data-filter="terrain">🌳 Terrains</button>
-      <button class="filter-chip" data-filter="autre">🏬 Autres</button>
+      <button class="filter-chip" data-filter="maison">Maisons</button>
+      <button class="filter-chip" data-filter="appartement">Appartements</button>
+      <button class="filter-chip" data-filter="terrain">Terrains</button>
+      <button class="filter-chip" data-filter="autre">Autres</button>
     </div>
 
     <div class="biens-count" id="biensCount"></div>
 
     <div id="biensContainer">
-      <div class="bien-loading">
-        <div class="spinner"></div>
-        <p>Chargement de mes biens...</p>
-      </div>
+      <div class="biens-loading">Chargement de mes biens…</div>
     </div>
-
-    <div class="biens-footer-cta">
-      <p><strong>Une question sur un bien ?</strong> Photos détaillées, visite, infos complémentaires sont sur ma page Efficity.</p>
-      <a href="https://www.efficity.com/jfrogeais" class="btn btn-primary" target="_blank" rel="noopener">Voir tous les détails sur Efficity →</a>
-    </div>
-
   </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="assets/photos/logo-efficity-blanc.png" alt="Efficity">
-      <p>Joran Frogeais — Conseiller immobilier indépendant Efficity. Rennes, Bretagne et toute la France via le réseau Efficity.</p>
-    </div>
-    <div><h4>Services</h4><ul><li><a href="vendre.html">Vendre</a></li><li><a href="acheter.html">Acheter</a></li><li><a href="biens.html">Mes biens</a></li><li><a href="estimation.html">Estimation gratuite</a></li><li><a href="rejoindre.html">Rejoindre Efficity</a></li></ul></div>
-    <div><h4>À propos</h4><ul><li><a href="a-propos.html">Mon parcours</a></li><li><a href="contact.html">Contact</a></li><li><a href="temoignages.html">Témoignages</a></li><li><a href="conseils.html">Conseils</a></li></ul></div>
-    <div><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul></div>
+<section class="cta">
+  <div class="cta-inner reveal">
+    <h2 class="h-section">Vous ne trouvez pas votre bien ?</h2>
+    <p class="lead">Décrivez-moi votre projet d'achat. Je vous préviens dès qu'un bien correspondant arrive sur mes mandats ou ceux du réseau Efficity.</p>
+    <a href="contact.html" class="btn btn-primary">Décrire mon projet<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <div class="cta-meta">Ou par téléphone : <a href="tel:+33758631170">07 58 63 11 70</a></div>
   </div>
-  <div class="footer-bottom">© 2026 Joran Frogeais — Conseiller indépendant Efficity.</div>
-</footer>
+</section>
 
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-brand">
+    <div class="nav-logo"><span class="nav-logo-mark">JF</span><span class="nav-logo-text">Joran Frogeais<small>Conseiller Efficity · Rennes</small></span></div>
+    <p>Conseiller immobilier indépendant Efficity. Rennes, Bretagne et toute la France via le réseau Efficity de 2 500 conseillers.</p>
+  </div>
+  <div><h4>Services</h4><ul><li><a href="vendre.html">Vendre un bien</a></li><li><a href="acheter.html">Acheter un bien</a></li><li><a href="estimation.html">Estimation gratuite</a></li><li><a href="rejoindre.html">Rejoindre Efficity</a></li></ul></div>
+  <div><h4>Ressources</h4><ul><li><a href="biens.html">Mes biens</a></li><li><a href="conseils.html">Conseils</a></li><li><a href="temoignages.html">Témoignages</a></li><li><a href="a-propos.html">À propos</a></li></ul></div>
+  <div><h4>Contact</h4><ul><li><a href="tel:+33758631170">07 58 63 11 70</a></li><li><a href="mailto:jfrogeais@efficity.com">jfrogeais@efficity.com</a></li><li><a href="contact.html">Formulaire de contact</a></li><li><a href="mentions-legales.html">Mentions légales</a></li></ul></div>
+</div><div class="footer-bottom">
+  <span>© <span data-year>2026</span> Joran Frogeais — Conseiller indépendant Efficity</span>
+  <span><a href="confidentialite.html">Confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a></span>
+</div></footer>
+
+<div class="mobile-cta">
+  <a href="tel:+33758631170" class="btn btn-ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Appeler</a>
+  <a href="estimation.html" class="btn btn-primary">Estimation gratuite</a>
+</div>
+
+<script src="assets/js/script.js" defer></script>
 <script>
-const API_URL = "https://frogeais.app.n8n.cloud/webhook/list-mandats-public";
-const EFFICITY_PROFILE = "https://www.efficity.com/jfrogeais";
-
+const API_URL = 'https://frogeais.app.n8n.cloud/webhook/list-mandats-public';
+const EFFICITY_PROFILE = 'https://www.efficity.com/jfrogeais';
 let allMandats = [];
 let currentFilter = 'all';
-
 const container = document.getElementById('biensContainer');
 const countEl = document.getElementById('biensCount');
 
-const formatPrice = (price) => {
-  if (!price) return 'Prix sur demande';
-  return new Intl.NumberFormat('fr-FR').format(price) + ' €';
+const formatPrice = (p) => p ? new Intl.NumberFormat('fr-FR').format(p) + ' €' : 'Prix sur demande';
+const getStatus = (s) => {
+  const t = (s || '').toLowerCase();
+  if (t.includes('offre') || t.includes('attente')) return { label: 'Sous offre', cls: 'under-offer' };
+  return { label: 'Disponible', cls: '' };
 };
-
-const getStatusClass = (statut) => {
-  const s = (statut || '').toLowerCase();
-  if (s.includes('offre')) return 'offre';
-  if (s.includes('attente')) return 'attente';
-  return 'actif';
-};
-
-const getTypeCategory = (type) => {
-  const t = (type || '').toLowerCase();
-  if (t.includes('maison') || t.includes('cabane')) return 'maison';
-  if (t.includes('appartement')) return 'appartement';
-  if (t.includes('terrain')) return 'terrain';
+const getCat = (t) => {
+  const x = (t || '').toLowerCase();
+  if (x.includes('maison') || x.includes('cabane')) return 'maison';
+  if (x.includes('appart')) return 'appartement';
+  if (x.includes('terrain')) return 'terrain';
   return 'autre';
 };
 
+const placeholder = `<div class="placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>`;
+
 const renderBiens = () => {
-  const filtered = currentFilter === 'all'
-    ? allMandats
-    : allMandats.filter(m => getTypeCategory(m.type_bien) === currentFilter);
-
-  countEl.textContent = filtered.length === 0
-    ? 'Aucun bien dans cette catégorie pour le moment.'
-    : `${filtered.length} bien${filtered.length > 1 ? 's' : ''} ${currentFilter !== 'all' ? 'dans cette catégorie' : 'à vendre actuellement'}`;
-
+  const filtered = currentFilter === 'all' ? allMandats : allMandats.filter(m => getCat(m.type_bien) === currentFilter);
+  countEl.textContent = filtered.length === 0 ? 'Aucun bien dans cette catégorie' : filtered.length + (filtered.length > 1 ? ' biens disponibles' : ' bien disponible');
   if (filtered.length === 0) {
-    container.innerHTML = `<div class="bien-empty"><p>Aucun bien dans cette catégorie pour le moment.<br>D'autres mandats arrivent régulièrement, n'hésitez pas à <a href="contact.html">me contacter</a> pour me décrire votre projet.</p></div>`;
+    container.innerHTML = '<div class="biens-empty">Aucun bien dans cette catégorie pour le moment.<br>D\'autres mandats arrivent régulièrement — <a href="contact.html" style="color:var(--efficity-green-dark);text-decoration:underline;">décrivez-moi votre projet</a>.</div>';
     return;
   }
-
-  container.innerHTML = '<div class="biens-grid">' + filtered.map(b => `
-    <div class="bien-card">
-      <div class="bien-image">
-        ${b.photo ? `<img src="${b.photo}" alt="${b.type_bien} ${b.ville}" loading="lazy">` : `<div class="placeholder-icon">${b.type_icon || '🏠'}</div>`}
-        <span class="bien-status ${getStatusClass(b.statut_label)}">${b.statut_label || 'Actif'}</span>
+  container.innerHTML = '<div class="biens-grid">' + filtered.map(b => {
+    const st = getStatus(b.statut_label);
+    return `<a href="${b.efficity_url || EFFICITY_PROFILE}" target="_blank" rel="noopener" class="bien-card">
+      <div class="bien-photo">
+        ${b.photo ? `<img src="${b.photo}" alt="${b.type_bien || ''} ${b.ville || ''}" loading="lazy">` : placeholder}
+        <span class="bien-status ${st.cls}">${st.label}</span>
       </div>
       <div class="bien-body">
-        <div class="bien-type">${b.type_bien || 'Bien immobilier'}${b.surface ? ` · ${b.surface} m²` : ''}</div>
-        <div class="bien-ville">${b.ville || '—'}</div>
-        <div class="bien-prix">${formatPrice(b.prix)}</div>
-        <a href="${b.efficity_url || EFFICITY_PROFILE}" target="_blank" rel="noopener" class="bien-cta">Voir la fiche →</a>
+        <div class="bien-price">${formatPrice(b.prix)}</div>
+        <div class="bien-title">${b.type_bien || 'Bien'}${b.ville ? ' · ' + b.ville : ''}</div>
+        <div class="bien-meta">
+          ${b.surface ? `<span class="bien-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>${b.surface} m²</span>` : ''}
+          <span class="bien-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Voir la fiche</span>
+        </div>
       </div>
-    </div>
-  `).join('') + '</div>';
+    </a>`;
+  }).join('') + '</div>';
 };
 
-// Fetch
-fetch(API_URL)
-  .then(r => r.json())
-  .then(data => {
-    allMandats = data.mandats || [];
-    renderBiens();
-  })
-  .catch(err => {
-    container.innerHTML = `<div class="bien-empty"><p>⚠️ Impossible de charger les biens pour le moment.<br>Consultez ma page <a href="${EFFICITY_PROFILE}" target="_blank">Efficity</a> ou <a href="contact.html">contactez-moi</a>.</p></div>`;
-  });
-
-// Filters
-document.querySelectorAll('.filter-chip').forEach(chip => {
-  chip.addEventListener('click', () => {
-    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-    chip.classList.add('active');
-    currentFilter = chip.dataset.filter;
-    renderBiens();
-  });
+fetch(API_URL).then(r => r.json()).then(data => {
+  allMandats = data.mandats || [];
+  renderBiens();
+}).catch(() => {
+  container.innerHTML = '<div class="biens-empty">Impossible de charger les biens. Consultez ma page <a href="' + EFFICITY_PROFILE + '" target="_blank" style="color:var(--efficity-green-dark);text-decoration:underline;">Efficity</a> ou <a href="contact.html" style="color:var(--efficity-green-dark);text-decoration:underline;">contactez-moi</a>.</div>';
 });
-</script>
 
+document.querySelectorAll('.filter-chip').forEach(c => c.addEventListener('click', () => {
+  document.querySelectorAll('.filter-chip').forEach(x => x.classList.remove('active'));
+  c.classList.add('active');
+  currentFilter = c.dataset.filter;
+  renderBiens();
+}));
+</script>
 </body>
 </html>

@@ -3,1009 +3,298 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Demande d'estimation immobilière — Joran Frogeais Efficity</title>
+<title>Estimation gratuite — Joran Frogeais Efficity</title>
+<meta name="description" content="Estimation gratuite et rigoureuse de votre bien immobilier à Rennes et alentours. Méthodologie Efficity, réponse chiffrée par mail dans la journée.">
+<link rel="icon" type="image/jpeg" href="assets/photos/logo-picto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
 <style>
-:root {
-  --efficity-green: #5BB04B;
-  --efficity-green-dark: #3E8A30;
-  --efficity-green-light: #EAF7E6;
-  --efficity-yellow: #F2D900;
-  --gray-900: #1A1A1A;
-  --gray-700: #4A4A4A;
-  --gray-500: #8A8A8A;
-  --gray-300: #D4D4D4;
-  --gray-100: #F5F5F5;
-  --white: #FFFFFF;
-  --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  --radius: 12px;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background:
-    radial-gradient(circle at 15% 25%, rgba(91, 176, 75, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 85% 75%, rgba(242, 217, 0, 0.06) 0%, transparent 40%),
-    linear-gradient(135deg, #F8FBF9 0%, #E6F6EE 100%);
-  min-height: 100vh;
-  color: var(--gray-900);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-
-.shell {
-  width: 100%;
-  max-width: 1200px;
-  display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 24px;
-  align-items: stretch;
-}
-
-.container {
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-/* SIDE PANEL (gauche desktop) */
-.side-panel {
-  background: linear-gradient(160deg, var(--efficity-green) 0%, var(--efficity-green-dark) 100%);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  color: var(--white);
-  padding: 36px 32px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-}
-
-.side-panel::before {
-  content: "";
-  position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(circle, rgba(242, 217, 0, 0.25) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.side-panel::after {
-  content: "";
-  position: absolute;
-  bottom: -80px;
-  left: -80px;
-  width: 260px;
-  height: 260px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.side-logo {
-  height: 32px;
-  margin-bottom: 32px;
-  align-self: flex-start;
-  position: relative;
-  z-index: 2;
-}
-.side-logo img { height: 100%; width: auto; display: block; }
-
-.side-hero {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 28px;
-}
-
-.side-photo {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius);
-  background: var(--efficity-green-light);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
-  margin-bottom: 18px;
-  border: 4px solid rgba(255,255,255,0.25);
-  overflow: hidden;
-}
-.side-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.side-name {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.side-role {
+.radio-group { display: flex; gap: 8px; flex-wrap: wrap; }
+.radio-pill { display: inline-flex; }
+.radio-pill input { position: absolute; opacity: 0; }
+.radio-pill label {
+  padding: 10px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
   font-size: 14px;
-  opacity: 0.9;
-  margin-bottom: 4px;
-}
-
-.side-quote {
-  font-style: italic;
-  font-size: 14px;
-  line-height: 1.5;
-  opacity: 0.95;
-  padding: 16px 0 0;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  margin-top: 18px;
-  position: relative;
-  z-index: 2;
-}
-
-.side-values {
-  position: relative;
-  z-index: 2;
-  margin-top: auto;
-  padding-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.value-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.value-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
-  font-weight: 700;
-}
-
-.value-row strong { font-weight: 700; display: block; margin-bottom: 2px; }
-.value-row span { opacity: 0.9; font-size: 13px; }
-
-/* HEADER */
-.header {
-  background: linear-gradient(135deg, var(--efficity-green) 0%, var(--efficity-green-dark) 100%);
-  color: var(--white);
-  padding: 32px 40px 24px;
-  position: relative;
-}
-
-.header-top {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-
-.agent-photo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: var(--white) url('assets/photos/joran-agent.png') center/cover;
-  border: 3px solid var(--white);
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* Logo Efficity (vrai PNG officiel blanc, sur fond vert) */
-.efficity-svg-logo {
-  position: absolute;
-  top: 28px;
-  right: 32px;
-  height: 36px;
-}
-
-.efficity-svg-logo img { height: 100%; width: auto; display: block; }
-
-.agent-info h2 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-
-.agent-info p {
-  font-size: 13px;
-  opacity: 0.9;
-}
-
-.efficity-logo { display: none; }
-
-.header h1 {
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 6px;
-}
-
-.header .subtitle {
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-/* PROGRESS BAR */
-.progress-wrapper {
-  padding: 24px 40px 0;
-  background: var(--white);
-}
-
-.progress-steps {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-
-.step-indicator {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-  color: var(--gray-500);
   font-weight: 500;
-}
-
-.step-indicator.active {
-  color: var(--efficity-green);
-  font-weight: 600;
-}
-
-.step-indicator.completed {
-  color: var(--efficity-green);
-}
-
-.step-number {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--gray-100);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  font-weight: 600;
-  border: 2px solid var(--gray-300);
-  transition: all 0.3s ease;
-}
-
-.step-indicator.active .step-number {
-  background: var(--efficity-green);
-  border-color: var(--efficity-green);
-  color: var(--white);
-}
-
-.step-indicator.completed .step-number {
-  background: var(--efficity-green);
-  border-color: var(--efficity-green);
-  color: var(--white);
-}
-
-.step-indicator.completed .step-number::before {
-  content: "✓";
-}
-
-.step-indicator.completed .step-number-text {
-  display: none;
-}
-
-.progress-bar {
-  height: 4px;
-  background: var(--gray-100);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background: var(--efficity-green);
-  width: 33%;
-  transition: width 0.4s ease;
-}
-
-/* FORM */
-.form-content {
-  padding: 32px 40px 40px;
-}
-
-.step-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: var(--gray-900);
-}
-
-.step-subtitle {
-  font-size: 14px;
-  color: var(--gray-700);
-  margin-bottom: 28px;
-}
-
-.form-group {
-  margin-bottom: 22px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: var(--gray-900);
-}
-
-.form-group label .required {
-  color: var(--efficity-green);
-  margin-left: 2px;
-}
-
-.form-group .hint {
-  font-size: 12px;
-  color: var(--gray-500);
-  margin-top: 4px;
-  display: block;
-}
-
-input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea {
-  width: 100%;
-  padding: 12px 16px;
-  border: 1.5px solid var(--gray-300);
-  border-radius: 8px;
-  font-size: 15px;
-  font-family: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  background: var(--white);
-}
-
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: var(--efficity-green);
-  box-shadow: 0 0 0 3px rgba(0, 165, 81, 0.1);
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.form-row-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
-}
-
-/* RADIO CARDS */
-.radio-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 10px;
-}
-
-.radio-card {
-  position: relative;
-}
-
-.radio-card input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-}
-
-.radio-card label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px 12px;
-  border: 1.5px solid var(--gray-300);
-  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s;
-  text-align: center;
-  font-weight: 500;
-  background: var(--white);
+  background: var(--paper);
+  color: var(--muted-strong);
+  transition: all 200ms ease;
+  display: inline-block;
 }
-
-.radio-card input[type="radio"]:checked + label {
-  border-color: var(--efficity-green);
-  background: var(--efficity-green-light);
-  color: var(--efficity-green-dark);
-  font-weight: 600;
-}
-
-.radio-card .icon {
-  font-size: 24px;
-  margin-bottom: 6px;
-}
-
-/* CHECKBOX GROUP */
-.checkbox-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 10px;
-}
-
+.radio-pill input:checked + label { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.radio-pill label:hover { border-color: var(--efficity-green); }
+.checkbox-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .checkbox-item {
   display: flex;
   align-items: center;
-  padding: 12px 14px;
-  border: 1.5px solid var(--gray-300);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
   font-size: 14px;
+  cursor: pointer;
+  transition: all 200ms ease;
 }
-
-.checkbox-item:hover {
-  border-color: var(--efficity-green);
-}
-
-.checkbox-item input {
-  margin-right: 10px;
-  accent-color: var(--efficity-green);
-}
-
-.checkbox-item.checked {
-  background: var(--efficity-green-light);
-  border-color: var(--efficity-green);
-  color: var(--efficity-green-dark);
-  font-weight: 600;
-}
-
-/* DPE SCALE */
-.dpe-scale {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 6px;
-}
-
-.dpe-option input { display: none; }
-
+.checkbox-item:hover { border-color: var(--efficity-green); }
+.checkbox-item input { accent-color: var(--efficity-green); }
+.dpe-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; }
+.dpe-option input { position: absolute; opacity: 0; }
 .dpe-option label {
-  display: block;
-  text-align: center;
-  padding: 12px 4px;
-  border-radius: 6px;
-  cursor: pointer;
+  display: grid; place-items: center;
+  padding: 12px 0;
+  border: 2px solid transparent;
+  border-radius: var(--r-sm);
   font-weight: 700;
-  color: var(--white);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.dpe-option input:checked + label {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  outline: 3px solid var(--gray-900);
-  outline-offset: 2px;
-}
-
-.dpe-A label { background: #00a651; }
-.dpe-B label { background: #50b848; }
-.dpe-C label { background: #aed136; }
-.dpe-D label { background: #fff200; color: var(--gray-900); }
-.dpe-E label { background: #fdb913; }
-.dpe-F label { background: #f37021; }
-.dpe-G label { background: #ed1c24; }
-.dpe-NA label { background: var(--gray-300); color: var(--gray-700); font-size: 12px; }
-
-/* CONDITIONAL */
-.conditional { display: none; }
-.conditional.show { display: block; animation: slideDown 0.3s ease; }
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* NAVIGATION */
-.form-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid var(--gray-100);
-}
-
-.btn {
-  padding: 13px 28px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 14px;
   cursor: pointer;
-  border: none;
-  font-family: inherit;
-  transition: all 0.2s;
+  color: var(--ink);
 }
-
-.btn-primary {
-  background: var(--efficity-green);
-  color: var(--white);
+.dpe-A label { background: #00a651; color: #fff; }
+.dpe-B label { background: #50b948; color: #fff; }
+.dpe-C label { background: #aece43; }
+.dpe-D label { background: #ffea3a; }
+.dpe-E label { background: #fbb040; }
+.dpe-F label { background: #f06623; color: #fff; }
+.dpe-G label { background: #e30613; color: #fff; }
+.dpe-NA label { background: var(--paper-warm); color: var(--muted-strong); }
+.dpe-option input:checked + label { border-color: var(--ink); transform: scale(1.05); }
+.steps-form { display: flex; gap: var(--sp-3); margin-bottom: var(--sp-7); flex-wrap: wrap; justify-content: center; }
+.steps-form-item {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--muted); font-weight: 500;
 }
-
-.btn-primary:hover {
-  background: var(--efficity-green-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 165, 81, 0.3);
+.steps-form-item .num {
+  width: 22px; height: 22px;
+  background: var(--paper-warm);
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 12px; font-weight: 600;
+  color: var(--muted-strong);
 }
-
-.btn-secondary {
-  background: var(--gray-100);
-  color: var(--gray-700);
-}
-
-.btn-secondary:hover {
-  background: var(--gray-300);
-}
-
-.step-content { display: none; }
-.step-content.active { display: block; animation: fadeIn 0.4s ease; }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-/* RGPD */
-.rgpd-box {
-  background: var(--gray-100);
-  border-radius: 8px;
-  padding: 16px;
-  margin-top: 8px;
-  font-size: 13px;
-  color: var(--gray-700);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.rgpd-box input { margin-top: 3px; accent-color: var(--efficity-green); }
-
-/* TRUST BADGES */
-.trust-badges {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid var(--gray-100);
-  flex-wrap: wrap;
-}
-
-.trust-badge {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: var(--gray-500);
-}
-
-.trust-badge .icon { color: var(--efficity-green); font-weight: 700; }
-
-/* Desktop avec panel latéral : on cache la redondance dans le header du form */
-@media (min-width: 1025px) {
-  .container .header-top,
-  .container .efficity-svg-logo { display: none; }
-  .container .header { padding-top: 28px; }
-}
-
-@media (max-width: 1024px) {
-  .shell { grid-template-columns: 1fr; max-width: 720px; }
-  .side-panel { padding: 28px; }
-  .side-panel-bottom { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; }
-  .side-photo { aspect-ratio: 1 / 1; max-width: 180px; margin-bottom: 0; }
-  .side-values { padding-top: 0; flex-direction: row; flex-wrap: wrap; }
-  .value-row { flex: 1 1 200px; }
-  .side-quote { display: none; }
-}
-
-@media (max-width: 700px) {
-  .side-panel-bottom { grid-template-columns: 1fr; }
-  .side-photo { max-width: 140px; margin: 0 auto 18px; }
-  .side-values { flex-direction: column; }
-}
-
 @media (max-width: 600px) {
-  .form-row, .form-row-3 { grid-template-columns: 1fr; }
-  .header { padding: 24px 24px 20px; }
-  .efficity-logo { position: static; display: inline-block; margin-bottom: 12px; }
-  .form-content, .progress-wrapper { padding-left: 24px; padding-right: 24px; }
-  .header h1 { font-size: 22px; }
-  .step-indicator span:not(.step-number) { display: none; }
+  .checkbox-grid { grid-template-columns: 1fr; }
+  .dpe-grid { grid-template-columns: repeat(4, 1fr); }
 }
 </style>
 </head>
 <body>
 
-<div class="shell">
-
-<!-- ============= SIDE PANEL ============= -->
-<aside class="side-panel">
-  <div class="side-logo">
-    <img src="assets/photos/logo-efficity-blanc.png" alt="Efficity">
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><span class="nav-logo-mark">JF</span><span class="nav-logo-text">Joran Frogeais<small>Conseiller Efficity · Rennes</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="vendre.html">Vendre</a>
+    <a href="acheter.html">Acheter</a>
+    <a href="biens.html">Mes biens</a>
+    <a href="conseils.html">Conseils</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="estimation.html" class="nav-cta active">Estimation gratuite<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
   </div>
+</div></nav>
 
-  <div class="side-panel-bottom">
-    <div class="side-hero">
-      <div class="side-photo">
-        <img src="assets/photos/joran-agent.png" alt="Joran Frogeais">
-      </div>
-      <div class="side-name">Joran Frogeais</div>
-      <div class="side-role">Conseiller Immobilier Efficity</div>
-      <div class="side-role" style="opacity:0.8; font-size:13px;">Intervention partout en France</div>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-head reveal" style="display:block;text-align:center">
+      <span class="eyebrow" style="display:inline-flex">Estimation gratuite</span>
+      <h1 class="h-section">Combien vaut <em style="font-style:italic;color:var(--efficity-green-dark);font-family:var(--font-display)">vraiment</em> votre bien ?</h1>
+      <p class="lead" style="max-width:560px;margin:var(--sp-4) auto 0">Méthodologie Efficity rigoureuse. Réponse chiffrée et argumentée par mail dans la journée.</p>
     </div>
 
-    <div class="side-values">
-      <div class="value-row">
-        <div class="value-icon">€</div>
-        <div><strong>Estimation 100% gratuite</strong><span>Sans engagement, sans coût caché</span></div>
-      </div>
-      <div class="value-row">
-        <div class="value-icon">⏱</div>
-        <div><strong>Réponse sous 24h ouvrées</strong><span>Étudiée et rédigée par mes soins</span></div>
-      </div>
-      <div class="value-row">
-        <div class="value-icon">📊</div>
-        <div><strong>Basée sur les ventes réelles</strong><span>Données du marché à jour, biens comparables documentés</span></div>
-      </div>
-      <div class="value-row">
-        <div class="value-icon">🔒</div>
-        <div><strong>Données sécurisées RGPD</strong><span>Vos infos restent confidentielles</span></div>
-      </div>
+    <div class="steps-form reveal">
+      <span class="steps-form-item"><span class="num">1</span>Le bien</span>
+      <span class="steps-form-item"><span class="num">2</span>Caractéristiques</span>
+      <span class="steps-form-item"><span class="num">3</span>Vos coordonnées</span>
+      <span class="steps-form-item"><span class="num">4</span>Réponse 24 h</span>
     </div>
+
+    <form class="form-card reveal" id="estimForm">
+
+      <div class="form-section">
+        <h3>Le bien</h3>
+        <div class="form-row cols-1">
+          <div class="form-field">
+            <label>Type de bien <span class="req">*</span></label>
+            <div class="radio-group">
+              <span class="radio-pill"><input type="radio" name="type" id="t-maison" value="maison" checked><label for="t-maison">Maison</label></span>
+              <span class="radio-pill"><input type="radio" name="type" id="t-appart" value="appartement"><label for="t-appart">Appartement</label></span>
+              <span class="radio-pill"><input type="radio" name="type" id="t-terrain" value="terrain"><label for="t-terrain">Terrain</label></span>
+              <span class="radio-pill"><input type="radio" name="type" id="t-autre" value="autre"><label for="t-autre">Autre</label></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-row cols-1">
+          <div class="form-field">
+            <label for="adresse">Adresse complète <span class="req">*</span></label>
+            <input type="text" id="adresse" name="adresse" placeholder="Numéro, rue, code postal, ville" required>
+            <span class="form-help">Pour identifier la zone et les comparables locaux. Confidentiel.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>Caractéristiques principales</h3>
+        <div class="form-row cols-3">
+          <div class="form-field">
+            <label for="surface">Surface (m²) <span class="req">*</span></label>
+            <input type="number" id="surface" name="surface" min="10" max="2000" placeholder="95" required>
+          </div>
+          <div class="form-field">
+            <label for="surface_terrain">Terrain (m²)</label>
+            <input type="number" id="surface_terrain" name="surface_terrain" min="0" max="100000" placeholder="450">
+          </div>
+          <div class="form-field">
+            <label for="annee">Année construction</label>
+            <input type="number" id="annee" name="annee" min="1700" max="2026" placeholder="2005">
+          </div>
+        </div>
+        <div class="form-row cols-3">
+          <div class="form-field">
+            <label for="pieces">Pièces <span class="req">*</span></label>
+            <input type="number" id="pieces" name="pieces" min="1" max="20" placeholder="4" required>
+          </div>
+          <div class="form-field">
+            <label for="chambres">Chambres <span class="req">*</span></label>
+            <input type="number" id="chambres" name="chambres" min="0" max="15" placeholder="3" required>
+          </div>
+          <div class="form-field">
+            <label for="etage">Étage (si appart.)</label>
+            <input type="number" id="etage" name="etage" min="0" max="50" placeholder="3">
+          </div>
+        </div>
+        <div class="form-row cols-1">
+          <div class="form-field">
+            <label>État général <span class="req">*</span></label>
+            <div class="radio-group">
+              <span class="radio-pill"><input type="radio" name="etat" id="e-renover" value="a_renover"><label for="e-renover">À rénover</label></span>
+              <span class="radio-pill"><input type="radio" name="etat" id="e-bon" value="bon" checked><label for="e-bon">Bon état</label></span>
+              <span class="radio-pill"><input type="radio" name="etat" id="e-tres-bon" value="tres_bon"><label for="e-tres-bon">Très bon état</label></span>
+              <span class="radio-pill"><input type="radio" name="etat" id="e-neuf" value="refait_neuf"><label for="e-neuf">Refait à neuf</label></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-row cols-1">
+          <div class="form-field">
+            <label>Stationnement</label>
+            <div class="radio-group">
+              <span class="radio-pill"><input type="radio" name="parking" id="p-aucun" value="aucun" checked><label for="p-aucun">Aucun</label></span>
+              <span class="radio-pill"><input type="radio" name="parking" id="p-place" value="place"><label for="p-place">Place</label></span>
+              <span class="radio-pill"><input type="radio" name="parking" id="p-garage" value="garage"><label for="p-garage">Garage</label></span>
+              <span class="radio-pill"><input type="radio" name="parking" id="p-box" value="box"><label for="p-box">Box</label></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-row cols-1">
+          <div class="form-field">
+            <label>DPE (si connu)</label>
+            <div class="dpe-grid">
+              <div class="dpe-option dpe-A"><input type="radio" name="dpe" id="d-A" value="A"><label for="d-A">A</label></div>
+              <div class="dpe-option dpe-B"><input type="radio" name="dpe" id="d-B" value="B"><label for="d-B">B</label></div>
+              <div class="dpe-option dpe-C"><input type="radio" name="dpe" id="d-C" value="C"><label for="d-C">C</label></div>
+              <div class="dpe-option dpe-D"><input type="radio" name="dpe" id="d-D" value="D"><label for="d-D">D</label></div>
+              <div class="dpe-option dpe-E"><input type="radio" name="dpe" id="d-E" value="E"><label for="d-E">E</label></div>
+              <div class="dpe-option dpe-F"><input type="radio" name="dpe" id="d-F" value="F"><label for="d-F">F</label></div>
+              <div class="dpe-option dpe-G"><input type="radio" name="dpe" id="d-G" value="G"><label for="d-G">G</label></div>
+              <div class="dpe-option dpe-NA"><input type="radio" name="dpe" id="d-NA" value="" checked><label for="d-NA">N.C.</label></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row cols-1">
+          <div class="form-field">
+            <label>Atouts du bien (multi-choix)</label>
+            <div class="checkbox-grid">
+              <label class="checkbox-item"><input type="checkbox" name="atouts" value="jardin">Jardin</label>
+              <label class="checkbox-item"><input type="checkbox" name="atouts" value="terrasse">Terrasse</label>
+              <label class="checkbox-item"><input type="checkbox" name="atouts" value="balcon">Balcon</label>
+              <label class="checkbox-item"><input type="checkbox" name="atouts" value="piscine">Piscine</label>
+              <label class="checkbox-item"><input type="checkbox" name="atouts" value="ascenseur">Ascenseur</label>
+              <label class="checkbox-item"><input type="checkbox" name="atouts" value="cave">Cave</label>
+              <label class="checkbox-item"><input type="checkbox" name="atouts" value="cheminee">Cheminée</label>
+              <label class="checkbox-item"><input type="checkbox" name="atouts" value="gardien">Gardien</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>Vos coordonnées</h3>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="prenom">Prénom <span class="req">*</span></label>
+            <input type="text" id="prenom" name="prenom" placeholder="Jean" required>
+          </div>
+          <div class="form-field">
+            <label for="nom">Nom <span class="req">*</span></label>
+            <input type="text" id="nom" name="nom" placeholder="Dupont" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jean.dupont@email.com" required>
+          </div>
+          <div class="form-field">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="tel" placeholder="06 12 34 56 78">
+          </div>
+        </div>
+        <div class="form-row cols-1">
+          <div class="form-field">
+            <label for="message">Précisions complémentaires (optionnel)</label>
+            <textarea id="message" name="message" placeholder="Travaux récents, projet de vente, contraintes calendrier…"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <span class="form-help">Vos données ne sont utilisées que pour vous répondre. Pas de spam, jamais de revente.</span>
+        <button type="submit" class="btn btn-primary" id="submitBtn">
+          Envoyer ma demande
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+
+      <div class="form-status" id="formStatus"></div>
+    </form>
   </div>
+</section>
 
-  <p class="side-quote">« Mon objectif : vous donner une estimation que je peux défendre — pas un chiffre flatteur qui vous fera perdre du temps. »</p>
-</aside>
-
-<!-- ============= FORM CONTAINER ============= -->
-<div class="container">
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="efficity-svg-logo">
-      <img src="assets/photos/logo-efficity-blanc.png" alt="Efficity">
-    </div>
-    <div class="header-top">
-      <div class="agent-photo"></div>
-      <div class="agent-info">
-        <h2>Joran Frogeais</h2>
-        <p>Conseiller Immobilier · Intervention partout en France</p>
-      </div>
-    </div>
-    <h1>Demande d'estimation immobilière</h1>
-    <p class="subtitle">Réponse personnalisée sous 24h ouvrées — basée sur les ventes réelles de votre secteur</p>
-  </header>
-
-  <!-- PROGRESS -->
-  <div class="progress-wrapper">
-    <div class="progress-steps">
-      <div class="step-indicator active" data-step="1">
-        <span class="step-number"><span class="step-number-text">1</span></span>
-        <span>Votre bien</span>
-      </div>
-      <div class="step-indicator" data-step="2">
-        <span class="step-number"><span class="step-number-text">2</span></span>
-        <span>Caractéristiques</span>
-      </div>
-      <div class="step-indicator" data-step="3">
-        <span class="step-number"><span class="step-number-text">3</span></span>
-        <span>Coordonnées</span>
-      </div>
-    </div>
-    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-brand">
+    <div class="nav-logo"><span class="nav-logo-mark">JF</span><span class="nav-logo-text">Joran Frogeais<small>Conseiller Efficity · Rennes</small></span></div>
+    <p>Conseiller immobilier indépendant Efficity. Rennes, Bretagne et toute la France via le réseau Efficity de 2 500 conseillers.</p>
   </div>
+  <div><h4>Services</h4><ul><li><a href="vendre.html">Vendre un bien</a></li><li><a href="acheter.html">Acheter un bien</a></li><li><a href="estimation.html">Estimation gratuite</a></li><li><a href="rejoindre.html">Rejoindre Efficity</a></li></ul></div>
+  <div><h4>Ressources</h4><ul><li><a href="biens.html">Mes biens</a></li><li><a href="conseils.html">Conseils</a></li><li><a href="temoignages.html">Témoignages</a></li><li><a href="a-propos.html">À propos</a></li></ul></div>
+  <div><h4>Contact</h4><ul><li><a href="tel:+33758631170">07 58 63 11 70</a></li><li><a href="mailto:jfrogeais@efficity.com">jfrogeais@efficity.com</a></li><li><a href="contact.html">Formulaire de contact</a></li><li><a href="mentions-legales.html">Mentions légales</a></li></ul></div>
+</div><div class="footer-bottom">
+  <span>© <span data-year>2026</span> Joran Frogeais — Conseiller indépendant Efficity</span>
+  <span><a href="confidentialite.html">Confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a></span>
+</div></footer>
 
-  <!-- FORM -->
-  <form class="form-content" id="estimForm" onsubmit="return false;">
-
-    <!-- ÉTAPE 1 -->
-    <div class="step-content active" data-step="1">
-      <h3 class="step-title">Parlons de votre bien</h3>
-      <p class="step-subtitle">Quelques questions pour situer le contexte.</p>
-
-      <div class="form-group">
-        <label>Type de bien <span class="required">*</span></label>
-        <div class="radio-group">
-          <div class="radio-card">
-            <input type="radio" name="type" id="type-maison" value="maison" checked>
-            <label for="type-maison"><span class="icon">🏠</span>Maison</label>
-          </div>
-          <div class="radio-card">
-            <input type="radio" name="type" id="type-appart" value="appartement">
-            <label for="type-appart"><span class="icon">🏢</span>Appartement</label>
-          </div>
-          <div class="radio-card">
-            <input type="radio" name="type" id="type-terrain" value="terrain">
-            <label for="type-terrain"><span class="icon">🌿</span>Terrain</label>
-          </div>
-          <div class="radio-card">
-            <input type="radio" name="type" id="type-autre" value="autre">
-            <label for="type-autre"><span class="icon">🏘️</span>Autre</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="adresse">Adresse du bien <span class="required">*</span></label>
-        <input type="text" id="adresse" name="adresse" placeholder="Numéro, rue, code postal, ville" required>
-        <span class="hint">Adresse précise — utilisée uniquement pour l'estimation.</span>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="surface">Surface habitable (m²) <span class="required">*</span></label>
-          <input type="number" id="surface" name="surface" min="10" max="2000" placeholder="95" required>
-        </div>
-        <div class="form-group conditional" id="grp-terrain">
-          <label for="surface_terrain">Surface terrain (m²)</label>
-          <input type="number" id="surface_terrain" name="surface_terrain" min="0" max="100000" placeholder="450">
-        </div>
-      </div>
-
-      <div class="form-row-3">
-        <div class="form-group">
-          <label for="pieces">Pièces <span class="required">*</span></label>
-          <input type="number" id="pieces" name="pieces" min="1" max="20" placeholder="4" required>
-        </div>
-        <div class="form-group">
-          <label for="chambres">Chambres <span class="required">*</span></label>
-          <input type="number" id="chambres" name="chambres" min="0" max="15" placeholder="3" required>
-        </div>
-        <div class="form-group">
-          <label for="annee">Année construction</label>
-          <input type="number" id="annee" name="annee" min="1700" max="2026" placeholder="2005">
-        </div>
-      </div>
-
-      <div class="form-group conditional" id="grp-etage">
-        <label for="etage">Étage</label>
-        <input type="number" id="etage" name="etage" min="0" max="50" placeholder="3">
-        <span class="hint">0 = rez-de-chaussée.</span>
-      </div>
-    </div>
-
-    <!-- ÉTAPE 2 -->
-    <div class="step-content" data-step="2">
-      <h3 class="step-title">Caractéristiques du bien</h3>
-      <p class="step-subtitle">Plus c'est précis, plus l'estimation est juste.</p>
-
-      <div class="form-group">
-        <label>État général <span class="required">*</span></label>
-        <div class="radio-group">
-          <div class="radio-card">
-            <input type="radio" name="etat" id="etat-renover" value="a_renover">
-            <label for="etat-renover">À rénover</label>
-          </div>
-          <div class="radio-card">
-            <input type="radio" name="etat" id="etat-bon" value="bon" checked>
-            <label for="etat-bon">Bon état</label>
-          </div>
-          <div class="radio-card">
-            <input type="radio" name="etat" id="etat-tres-bon" value="tres_bon">
-            <label for="etat-tres-bon">Très bon état</label>
-          </div>
-          <div class="radio-card">
-            <input type="radio" name="etat" id="etat-neuf" value="refait_neuf">
-            <label for="etat-neuf">Refait à neuf</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>Stationnement</label>
-        <div class="radio-group">
-          <div class="radio-card">
-            <input type="radio" name="parking" id="park-aucun" value="aucun" checked>
-            <label for="park-aucun">Aucun</label>
-          </div>
-          <div class="radio-card">
-            <input type="radio" name="parking" id="park-place" value="place">
-            <label for="park-place">Place ext.</label>
-          </div>
-          <div class="radio-card">
-            <input type="radio" name="parking" id="park-garage" value="garage">
-            <label for="park-garage">Garage</label>
-          </div>
-          <div class="radio-card">
-            <input type="radio" name="parking" id="park-box" value="box">
-            <label for="park-box">Box / Carport</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>Classe énergie (DPE)</label>
-        <div class="dpe-scale">
-          <div class="dpe-option dpe-A"><input type="radio" name="dpe" id="dpe-A" value="A"><label for="dpe-A">A</label></div>
-          <div class="dpe-option dpe-B"><input type="radio" name="dpe" id="dpe-B" value="B"><label for="dpe-B">B</label></div>
-          <div class="dpe-option dpe-C"><input type="radio" name="dpe" id="dpe-C" value="C"><label for="dpe-C">C</label></div>
-          <div class="dpe-option dpe-D"><input type="radio" name="dpe" id="dpe-D" value="D"><label for="dpe-D">D</label></div>
-          <div class="dpe-option dpe-E"><input type="radio" name="dpe" id="dpe-E" value="E"><label for="dpe-E">E</label></div>
-          <div class="dpe-option dpe-F"><input type="radio" name="dpe" id="dpe-F" value="F"><label for="dpe-F">F</label></div>
-          <div class="dpe-option dpe-G"><input type="radio" name="dpe" id="dpe-G" value="G"><label for="dpe-G">G</label></div>
-          <div class="dpe-option dpe-NA"><input type="radio" name="dpe" id="dpe-NA" value="" checked><label for="dpe-NA">N.C.</label></div>
-        </div>
-        <span class="hint">N.C. = Non Connu. Disponible sur le DPE existant ou sur immo-data.fr.</span>
-      </div>
-
-      <div class="form-group">
-        <label>Atouts du bien</label>
-        <div class="checkbox-group">
-          <label class="checkbox-item"><input type="checkbox" name="atouts" value="jardin">Jardin</label>
-          <label class="checkbox-item"><input type="checkbox" name="atouts" value="terrasse">Terrasse</label>
-          <label class="checkbox-item"><input type="checkbox" name="atouts" value="balcon">Balcon</label>
-          <label class="checkbox-item"><input type="checkbox" name="atouts" value="piscine">Piscine</label>
-          <label class="checkbox-item"><input type="checkbox" name="atouts" value="ascenseur">Ascenseur</label>
-          <label class="checkbox-item"><input type="checkbox" name="atouts" value="cave">Cave</label>
-          <label class="checkbox-item"><input type="checkbox" name="atouts" value="cheminee">Cheminée</label>
-          <label class="checkbox-item"><input type="checkbox" name="atouts" value="gardien">Gardien</label>
-        </div>
-      </div>
-    </div>
-
-    <!-- ÉTAPE 3 -->
-    <div class="step-content" data-step="3">
-      <h3 class="step-title">Vos coordonnées</h3>
-      <p class="step-subtitle">Pour vous envoyer l'estimation détaillée et le rapport de marché.</p>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="prenom">Prénom <span class="required">*</span></label>
-          <input type="text" id="prenom" name="prenom" placeholder="Jean" required>
-        </div>
-        <div class="form-group">
-          <label for="nom">Nom <span class="required">*</span></label>
-          <input type="text" id="nom" name="nom" placeholder="Dupont" required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email <span class="required">*</span></label>
-        <input type="email" id="email" name="email" placeholder="jean.dupont@email.com" required>
-      </div>
-
-      <div class="form-group">
-        <label for="tel">Téléphone</label>
-        <input type="tel" id="tel" name="tel" placeholder="06 12 34 56 78">
-        <span class="hint">Optionnel — me permet de vous rappeler si question sur l'estimation.</span>
-      </div>
-
-      <div class="form-group">
-        <label>Votre projet</label>
-        <div class="radio-group">
-          <div class="radio-card">
-            <input type="radio" name="projet" id="proj-vente" value="vente_imminente">
-            <label for="proj-vente">Vente &lt; 3 mois</label>
-          </div>
-          <div class="radio-card">
-            <input type="radio" name="projet" id="proj-6mois" value="vente_6mois">
-            <label for="proj-6mois">Vente 3-6 mois</label>
-          </div>
-          <div class="radio-card">
-            <input type="radio" name="projet" id="proj-an" value="vente_1an" checked>
-            <label for="proj-an">Vente &gt; 6 mois</label>
-          </div>
-          <div class="radio-card">
-            <input type="radio" name="projet" id="proj-curieux" value="info">
-            <label for="proj-curieux">Info / curiosité</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="rgpd-box">
-        <input type="checkbox" id="rgpd" required>
-        <label for="rgpd">
-          J'accepte que mes données soient utilisées uniquement pour me communiquer l'estimation demandée.
-          <a href="#" style="color: var(--efficity-green-dark);">Politique de confidentialité</a>
-        </label>
-      </div>
-    </div>
-
-    <!-- NAV -->
-    <div class="form-nav">
-      <button type="button" class="btn btn-secondary" id="btnPrev" style="visibility:hidden;">← Précédent</button>
-      <button type="button" class="btn btn-primary" id="btnNext">Continuer →</button>
-    </div>
-
-    <!-- TRUST -->
-    <div class="trust-badges">
-      <div class="trust-badge"><span class="icon">✓</span>100% gratuit</div>
-      <div class="trust-badge"><span class="icon">✓</span>Réponse 24h</div>
-      <div class="trust-badge"><span class="icon">✓</span>Données sécurisées RGPD</div>
-      <div class="trust-badge"><span class="icon">✓</span>Sans engagement</div>
-    </div>
-
-  </form>
-</div>
-
-</div><!-- /.shell -->
-
+<script src="assets/js/script.js" defer></script>
 <script>
-// ⚠️ À remplacer par l'URL webhook n8n WF08 quand prêt
 const WEBHOOK_URL = 'https://frogeais.app.n8n.cloud/webhook/estim-form';
-const MERCI_URL = 'merci.html';
+const form = document.getElementById('estimForm');
+const status = document.getElementById('formStatus');
+const submitBtn = document.getElementById('submitBtn');
 
-let currentStep = 1;
-const totalSteps = 3;
-
-function updateUI() {
-  document.querySelectorAll('.step-content').forEach(s => s.classList.remove('active'));
-  document.querySelector(`.step-content[data-step="${currentStep}"]`).classList.add('active');
-
-  document.querySelectorAll('.step-indicator').forEach(s => {
-    const step = parseInt(s.dataset.step);
-    s.classList.remove('active', 'completed');
-    if (step < currentStep) s.classList.add('completed');
-    if (step === currentStep) s.classList.add('active');
-  });
-
-  document.getElementById('progressFill').style.width = `${(currentStep / totalSteps) * 100}%`;
-  document.getElementById('btnPrev').style.visibility = currentStep === 1 ? 'hidden' : 'visible';
-  document.getElementById('btnNext').textContent = currentStep === totalSteps ? 'Recevoir mon estimation →' : 'Continuer →';
-
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function validateStep(step) {
-  const stepEl = document.querySelector(`.step-content[data-step="${step}"]`);
-  const required = stepEl.querySelectorAll('[required]');
-  for (const f of required) {
-    if (!f.value || (f.type === 'checkbox' && !f.checked)) {
-      f.focus();
-      f.style.borderColor = '#e74c3c';
-      setTimeout(() => f.style.borderColor = '', 2000);
-      return false;
-    }
-  }
-  if (step === 3) {
-    const email = document.getElementById('email');
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-      email.focus();
-      email.style.borderColor = '#e74c3c';
-      return false;
-    }
-  }
-  return true;
-}
-
-function collectFormData() {
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const fd = new FormData(form);
   const data = {};
-  const form = document.getElementById('estimForm');
-  // Texte/number/radio
-  form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="number"]').forEach(i => {
-    if (i.value) data[i.name] = i.type === 'number' ? Number(i.value) : i.value.trim();
-  });
-  form.querySelectorAll('input[type="radio"]:checked').forEach(i => {
-    if (i.value !== '') data[i.name] = i.value;
-  });
-  // Checkboxes (atouts)
-  data.atouts = [...form.querySelectorAll('input[name="atouts"]:checked')].map(c => c.value);
-  // Meta
-  data.source = 'form_estimation_web';
-  data.submitted_at = new Date().toISOString();
-  data.user_agent = navigator.userAgent;
-  data.referer = document.referrer || null;
-  return data;
-}
+  fd.forEach((v, k) => { if (k === 'atouts') { data.atouts = (data.atouts||[]); data.atouts.push(v); } else { data[k] = v; } });
+  if (!data.atouts) data.atouts = [];
 
-async function submitForm() {
-  const btn = document.getElementById('btnNext');
-  btn.disabled = true;
-  btn.textContent = 'Envoi en cours...';
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = 'Envoi en cours…';
+  status.classList.remove('show', 'success', 'error');
 
-  const data = collectFormData();
   try {
     const res = await fetch(WEBHOOK_URL, {
       method: 'POST',
@@ -1013,41 +302,16 @@ async function submitForm() {
       body: JSON.stringify(data)
     });
     if (!res.ok) throw new Error('HTTP ' + res.status);
-  } catch (e) {
-    console.error('Webhook error', e);
-    // Fail-safe : on redirige quand même vers merci pour ne pas perdre le lead
-    // (n8n côté serveur peut aussi recevoir via un fallback, mais on log côté client)
+    status.textContent = 'Demande reçue. Vous allez recevoir votre estimation par mail dans la journée. Si urgent, appelez-moi au 07 58 63 11 70.';
+    status.classList.add('show', 'success');
+    form.reset();
+    submitBtn.innerHTML = 'Demande envoyée';
+  } catch (err) {
+    status.textContent = 'Erreur d\'envoi. Réessayez ou contactez-moi directement au 07 58 63 11 70.';
+    status.classList.add('show', 'error');
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = 'Envoyer ma demande';
   }
-  // Redirection avec params pour personnaliser la page merci
-  const params = new URLSearchParams({
-    prenom: data.prenom || '',
-    adresse: data.adresse || ''
-  });
-  window.location.href = `${MERCI_URL}?${params.toString()}`;
-}
-
-document.getElementById('btnNext').addEventListener('click', () => {
-  if (!validateStep(currentStep)) return;
-  if (currentStep < totalSteps) { currentStep++; updateUI(); }
-  else { submitForm(); }
-});
-document.getElementById('btnPrev').addEventListener('click', () => {
-  if (currentStep > 1) { currentStep--; updateUI(); }
-});
-
-// Conditional fields
-document.querySelectorAll('input[name="type"]').forEach(radio => {
-  radio.addEventListener('change', e => {
-    const type = e.target.value;
-    document.getElementById('grp-terrain').classList.toggle('show', type === 'maison' || type === 'terrain');
-    document.getElementById('grp-etage').classList.toggle('show', type === 'appartement');
-  });
-});
-document.getElementById('grp-terrain').classList.add('show');
-
-// Checkbox highlight
-document.querySelectorAll('.checkbox-item input').forEach(cb => {
-  cb.addEventListener('change', e => e.target.closest('.checkbox-item').classList.toggle('checked', e.target.checked));
 });
 </script>
 </body>

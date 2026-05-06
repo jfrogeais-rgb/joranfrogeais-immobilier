@@ -3,93 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Joran Frogeais Efficity</title>
-<meta name="description" content="Contactez Joran Frogeais, conseiller immobilier Efficity. Téléphone, email, prise de RDV en ligne.">
+<title>Contact — Joran Frogeais Conseiller Efficity Rennes</title>
+<meta name="description" content="Contactez Joran Frogeais, conseiller immobilier Efficity à Rennes. Téléphone, email, formulaire de contact direct.">
 <link rel="icon" type="image/jpeg" href="assets/photos/logo-picto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/photos/logo-efficity-color.png" alt="Efficity">
-      <div class="nav-logo-text">
-        Joran Frogeais
-        <small>Conseiller immobilier Efficity</small>
-      </div>
-    </a>
-    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
-    <div class="nav-links">
-      <a href="index.html">Accueil</a>
-      <a href="vendre.html">Vendre</a>
-      <a href="acheter.html">Acheter</a>
-      <a href="biens.html">Mes biens</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="contact.html" class="active">Contact</a>
-      <a href="rejoindre.html">Rejoindre</a>
-      <a href="estimation.html" class="nav-cta">Estimation gratuite</a>
-    </div>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><span class="nav-logo-mark">JF</span><span class="nav-logo-text">Joran Frogeais<small>Conseiller Efficity · Rennes</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="vendre.html">Vendre</a>
+    <a href="acheter.html">Acheter</a>
+    <a href="biens.html">Mes biens</a>
+    <a href="conseils.html">Conseils</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="estimation.html" class="nav-cta">Estimation gratuite<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
   </div>
-</nav>
-
-<header class="page-header">
-  <h1>On échange ?</h1>
-  <p>Le moyen le plus rapide : le téléphone. Sinon mail ou prise de RDV directe.</p>
-</header>
+</div></nav>
 
 <section class="section">
   <div class="section-inner">
-    <div class="content-grid">
-      <div class="content-card">
-        <h3>📞 Téléphone</h3>
-        <p style="font-size:24px; font-weight:700; color:var(--efficity-green-dark); margin:8px 0 16px;">
-          <a href="tel:+33758631170">07 58 63 11 70</a>
-        </p>
-        <p>Du lundi au samedi, 9h-19h. SMS et WhatsApp acceptés.</p>
-      </div>
-      <div class="content-card">
-        <h3>✉️ Email</h3>
-        <p style="font-size:18px; font-weight:600; margin:8px 0 16px;">
-          <a href="mailto:jfrogeais@efficity.com">jfrogeais@efficity.com</a>
-        </p>
-        <p>Je réponds sous 24h ouvrées. Joignez photos / plans si besoin.</p>
-      </div>
-      <div class="content-card">
-        <h3>📅 Prendre RDV directement</h3>
-        <p>15 minutes en visio pour cadrer votre projet (vendeur ou acquéreur). Sans engagement.</p>
-        <p style="margin-top:16px;">
-          <a href="https://cal.com/joran-frogeais-gdjgrw/rdv-telephonique-15-min" class="btn btn-primary" target="_blank" rel="noopener">Réserver un créneau →</a>
-        </p>
-      </div>
-      <div class="content-card">
-        <h3>📍 Zone d'intervention</h3>
-        <p>Basé à Rennes, j'interviens en direct sur l'agglomération rennaise. Pour le reste de la France, je m'appuie sur le réseau Efficity (2500 conseillers) avec partage d'acquéreurs et de mandats.</p>
-      </div>
+    <div class="section-head reveal" style="display:block;text-align:center">
+      <span class="eyebrow" style="display:inline-flex">Contact</span>
+      <h1 class="h-section">Parlons de <em style="font-style:italic;color:var(--efficity-green-dark);font-family:var(--font-display)">votre projet</em>.</h1>
+      <p class="lead" style="max-width:560px;margin:var(--sp-4) auto 0">Trois canaux pour me joindre. Je réponds en moyenne sous 4 h ouvrées.</p>
     </div>
+
+    <div class="contact-quick reveal">
+      <a href="tel:+33758631170" class="contact-quick-card">
+        <div class="contact-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Téléphone</h3>
+        <span class="big">07 58 63 11 70</span>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px">Lun-Sam · 9 h - 19 h</p>
+      </a>
+      <a href="mailto:jfrogeais@efficity.com" class="contact-quick-card">
+        <div class="contact-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h3>Email</h3>
+        <span class="big" style="font-size:16px">jfrogeais@efficity.com</span>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px">Réponse sous 4 h ouvrées</p>
+      </a>
+      <a href="https://www.efficity.com/jfrogeais" target="_blank" rel="noopener" class="contact-quick-card">
+        <div class="contact-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Profil Efficity</h3>
+        <span class="big" style="font-size:16px">efficity.com/jfrogeais</span>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px">Tous mes biens et avis clients</p>
+      </a>
+    </div>
+
+    <form class="form-card reveal" id="contactForm">
+      <div class="form-section">
+        <h3>Ou envoyez-moi un message</h3>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="prenom">Prénom <span class="req">*</span></label>
+            <input type="text" id="prenom" name="prenom" required placeholder="Jean">
+          </div>
+          <div class="form-field">
+            <label for="nom">Nom <span class="req">*</span></label>
+            <input type="text" id="nom" name="nom" required placeholder="Dupont">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="jean.dupont@email.com">
+          </div>
+          <div class="form-field">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="tel" placeholder="06 12 34 56 78">
+          </div>
+        </div>
+        <div class="form-row cols-1">
+          <div class="form-field">
+            <label for="sujet">Votre projet en une ligne <span class="req">*</span></label>
+            <input type="text" id="sujet" name="sujet" required placeholder="Vente maison Betton, achat appartement Rennes Centre…">
+          </div>
+        </div>
+        <div class="form-row cols-1">
+          <div class="form-field">
+            <label for="message">Détails (optionnel)</label>
+            <textarea id="message" name="message" placeholder="Calendrier, contraintes, questions précises…"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-actions">
+        <span class="form-help">Pas de spam, jamais de revente de données. Vous restez maître du contact.</span>
+        <button type="submit" class="btn btn-primary" id="submitBtn">
+          Envoyer
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+      <div class="form-status" id="formStatus"></div>
+    </form>
   </div>
 </section>
 
-<section class="cta-section">
-  <div class="section-inner">
-    <h2>Vous voulez vendre ?</h2>
-    <p>L'étape la plus rapide : remplir le formulaire d'estimation. 5 minutes, retour chiffré dans la journée.</p>
-    <a href="estimation.html" class="btn btn-primary">Démarrer mon estimation →</a>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-brand">
+    <div class="nav-logo"><span class="nav-logo-mark">JF</span><span class="nav-logo-text">Joran Frogeais<small>Conseiller Efficity · Rennes</small></span></div>
+    <p>Conseiller immobilier indépendant Efficity. Rennes, Bretagne et toute la France via le réseau Efficity de 2 500 conseillers.</p>
   </div>
-</section>
+  <div><h4>Services</h4><ul><li><a href="vendre.html">Vendre un bien</a></li><li><a href="acheter.html">Acheter un bien</a></li><li><a href="estimation.html">Estimation gratuite</a></li><li><a href="rejoindre.html">Rejoindre Efficity</a></li></ul></div>
+  <div><h4>Ressources</h4><ul><li><a href="biens.html">Mes biens</a></li><li><a href="conseils.html">Conseils</a></li><li><a href="temoignages.html">Témoignages</a></li><li><a href="a-propos.html">À propos</a></li></ul></div>
+  <div><h4>Contact</h4><ul><li><a href="tel:+33758631170">07 58 63 11 70</a></li><li><a href="mailto:jfrogeais@efficity.com">jfrogeais@efficity.com</a></li><li><a href="contact.html">Formulaire de contact</a></li><li><a href="mentions-legales.html">Mentions légales</a></li></ul></div>
+</div><div class="footer-bottom">
+  <span>© <span data-year>2026</span> Joran Frogeais — Conseiller indépendant Efficity</span>
+  <span><a href="confidentialite.html">Confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a></span>
+</div></footer>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="assets/photos/logo-efficity-blanc.png" alt="Efficity">
-      <p>Joran Frogeais — Conseiller immobilier indépendant Efficity. Rennes, Bretagne et toute la France via le réseau Efficity.</p>
-    </div>
-    <div><h4>Services</h4><ul><li><a href="vendre.html">Vendre</a></li><li><a href="acheter.html">Acheter</a></li><li><a href="estimation.html">Estimation gratuite</a></li><li><a href="rejoindre.html">Rejoindre Efficity</a></li></ul></div>
-    <div><h4>À propos</h4><ul><li><a href="a-propos.html">Mon parcours</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div><h4>Contact</h4><ul><li><a href="tel:+33758631170">07 58 63 11 70</a></li><li><a href="mailto:jfrogeais@efficity.com">jfrogeais@efficity.com</a></li></ul></div>
-  </div>
-  <div class="footer-bottom">© 2026 Joran Frogeais — Conseiller indépendant Efficity.</div>
-</footer>
-
+<script src="assets/js/script.js" defer></script>
+<script>
+const form = document.getElementById('contactForm');
+const status = document.getElementById('formStatus');
+const submitBtn = document.getElementById('submitBtn');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const fd = new FormData(form);
+  const data = {};
+  fd.forEach((v, k) => data[k] = v);
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = 'Envoi…';
+  try {
+    await fetch('https://frogeais.app.n8n.cloud/webhook/contact-form', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    status.textContent = 'Message reçu. Je reviens vers vous sous 4 h ouvrées. Pour urgent, appelez le 07 58 63 11 70.';
+    status.className = 'form-status show success';
+    form.reset();
+    submitBtn.innerHTML = 'Message envoyé';
+  } catch {
+    status.textContent = 'Erreur d\'envoi. Appelez-moi directement au 07 58 63 11 70.';
+    status.className = 'form-status show error';
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = 'Envoyer';
+  }
+});
+</script>
 </body>
 </html>
