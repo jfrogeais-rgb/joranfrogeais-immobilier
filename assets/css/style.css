@@ -152,31 +152,33 @@ ul { list-style: none; }
   background: var(--forest);
   border-radius: 2px;
 }
-/* nav-cta = copie exacte du btn-primary du hero pour cohérence visuelle */
+/* nav-cta = clone parfait du .btn.btn-primary du hero */
 .nav-cta {
-  background: var(--ink);
-  color: var(--paper) !important;
-  padding: 14px 24px;
-  border-radius: var(--r-sm);
-  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 14px 24px !important;
+  border-radius: var(--r-sm) !important;
   font-size: 15px !important;
-  line-height: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 200ms ease;
-  white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(10, 10, 10, 0.18), 0 1px 2px rgba(10, 10, 10, 0.08);
+  font-weight: 500 !important;
+  letter-spacing: -0.005em !important;
+  line-height: 1 !important;
+  transition: all 200ms ease !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  background: var(--ink) !important;
+  color: var(--paper) !important;
+  box-shadow: 0 4px 14px rgba(10, 10, 10, 0.18), 0 1px 2px rgba(10, 10, 10, 0.08) !important;
+  border: 0 !important;
 }
 .nav-cta:hover {
-  background: var(--forest);
+  background: var(--forest) !important;
   color: var(--paper) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(26, 77, 58, 0.32), 0 2px 4px rgba(10, 10, 10, 0.1);
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 24px rgba(26, 77, 58, 0.32), 0 2px 4px rgba(10, 10, 10, 0.1) !important;
 }
 .nav-cta::after { display: none !important; }
-.nav-cta svg { width: 18px; height: 18px; flex-shrink: 0; }
+.nav-cta svg { width: 18px !important; height: 18px !important; flex-shrink: 0; }
 
 .nav-toggle {
   display: none;
@@ -325,7 +327,7 @@ ul { list-style: none; }
 
 .hero-visual {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 5 / 4;
   border-radius: var(--r-xl);
   overflow: hidden;
   background: var(--paper-warm);
@@ -335,7 +337,7 @@ ul { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: 70% center;
 }
 .hero-card {
   position: absolute;
