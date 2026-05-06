@@ -62,6 +62,9 @@
       <button class="filter-chip" data-filter="maison">Maisons</button>
       <button class="filter-chip" data-filter="appartement">Appartements</button>
       <button class="filter-chip" data-filter="terrain">Terrains</button>
+      <button class="filter-chip" data-filter="local">Locaux commerciaux</button>
+      <button class="filter-chip" data-filter="bureau">Bureaux</button>
+      <button class="filter-chip" data-filter="fonds">Fonds de commerce</button>
       <button class="filter-chip" data-filter="autre">Autres</button>
     </div>
 
@@ -120,6 +123,9 @@ const getCat = (t) => {
   if (x.includes('maison') || x.includes('cabane')) return 'maison';
   if (x.includes('appart')) return 'appartement';
   if (x.includes('terrain')) return 'terrain';
+  if (x.includes('local') || x.includes('commerc')) return 'local';
+  if (x.includes('bureau')) return 'bureau';
+  if (x.includes('fond')) return 'fonds';
   return 'autre';
 };
 
