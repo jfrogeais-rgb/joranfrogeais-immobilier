@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mettre à jour mes critères de recherche — Joran Frogeais Efficity</title>
+<link rel="icon" type="image/jpeg" href="assets/photos/logo-picto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap">
+<style>
+:root {
+  --efficity-green: #5BB04B;
+  --efficity-green-dark: #3E8A30;
+  --efficity-green-light: #EAF7E6;
+  --efficity-yellow: #F2D900;
+  --gray-900: #1A1A1A;
+  --gray-700: #4A4A4A;
+  --gray-500: #8A8A8A;
+  --gray-300: #D4D4D4;
+  --gray-100: #F5F5F5;
+  --white: #FFFFFF;
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(91, 176, 75, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(242, 217, 0, 0.06) 0%, transparent 40%),
+    linear-gradient(135deg, #F8FBF9 0%, #E6F6EE 100%);
+  min-height: 100vh;
+  color: var(--gray-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.shell {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.container {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* SIDE PANEL */
+.side-panel {
+  background: linear-gradient(160deg, var(--efficity-green) 0%, var(--efficity-green-dark) 100%);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--white);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.side-panel::before {
+  content: "";
+  position: absolute; top: -60px; right: -60px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(242, 217, 0, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.side-panel::after {
+  content: "";
+  position: absolute; bottom: -80px; left: -80px;
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.side-logo {
+  height: 32px;
+  margin-bottom: 32px;
+  align-self: flex-start;
+  position: relative; z-index: 2;
+}
+.side-logo img { height: 100%; width: auto; display: block; }
+
+.side-hero { position: relative; z-index: 2; margin-bottom: 28px; }
+
+.side-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  background: var(--efficity-green-light);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  margin-bottom: 18px;
+  border: 4px solid rgba(255,255,255,0.25);
+  overflow: hidden;
+}
+.side-photo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+.side-name { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+.side-role { font-size: 14px; opacity: 0.9; margin-bottom: 4px; }
+
+.side-quote {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.95;
+  padding: 16px 0 0;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-top: 18px;
+  position: relative; z-index: 2;
+}
+
+.side-values {
+  position: relative; z-index: 2;
+  margin-top: auto;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.value-row { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; line-height: 1.4; }
+.value-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.18);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0; font-weight: 700;
+}
+.value-row strong { font-weight: 700; display: block; margin-bottom: 2px; }
+.value-row span { opacity: 0.9; font-size: 13px; }
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, var(--efficity-green) 0%, var(--efficity-green-dark) 100%);
+  color: var(--white);
+  padding: 32px 40px 28px;
+  position: relative;
+}
+.efficity-svg-logo {
+  position: absolute; top: 28px; right: 32px;
+  height: 36px;
+}
+.efficity-svg-logo img { height: 100%; width: auto; display: block; }
+
+.header-top { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.agent-photo {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--white) url('assets/photos/joran-agent.png') center/cover;
+  border: 3px solid var(--white);
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.agent-info h2 { font-size: 18px; font-weight: 600; margin-bottom: 2px; }
+.agent-info p { font-size: 13px; opacity: 0.9; }
+
+.header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.header .subtitle { font-size: 15px; opacity: 0.95; line-height: 1.5; }
+
+/* FORM */
+.form-content { padding: 32px 40px 36px; }
+
+.form-group { margin-bottom: 22px; }
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--gray-900);
+}
+.form-group label .required { color: var(--efficity-green); margin-left: 2px; }
+.form-group .hint { font-size: 12px; color: var(--gray-500); margin-top: 4px; display: block; }
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--gray-300);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: var(--white);
+}
+textarea { min-height: 90px; resize: vertical; }
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--efficity-green);
+  box-shadow: 0 0 0 3px rgba(91, 176, 75, 0.12);
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.radio-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+.radio-card { position: relative; }
+.radio-card input[type="radio"] { position: absolute; opacity: 0; }
+.radio-card label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border: 1.5px solid var(--gray-300);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  font-weight: 500;
+  background: var(--white);
+  font-size: 14px;
+  min-height: 48px;
+}
+.radio-card input[type="radio"]:checked + label {
+  border-color: var(--efficity-green);
+  background: var(--efficity-green-light);
+  color: var(--efficity-green-dark);
+  font-weight: 600;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: all 0.2s;
+  width: 100%;
+}
+.btn-primary {
+  background: var(--efficity-green);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(91, 176, 75, 0.32), 0 1px 2px rgba(0,0,0,0.08);
+}
+.btn-primary:hover {
+  background: var(--efficity-green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(62, 138, 48, 0.4), 0 2px 4px rgba(0,0,0,0.1);
+}
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--gray-100);
+  flex-wrap: wrap;
+}
+.trust-badge { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gray-500); }
+.trust-badge .icon { color: var(--efficity-green); font-weight: 700; }
+
+.success-box, .error-box {
+  display: none;
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.success-box { background: var(--efficity-green-light); color: var(--efficity-green-dark); border: 1px solid var(--efficity-green); }
+.error-box { background: #FEE; color: #B12; border: 1px solid #E66; }
+.success-box.show, .error-box.show { display: block; }
+
+@media (min-width: 1025px) {
+  .container .header-top, .container .efficity-svg-logo { display: none; }
+  .container .header { padding-top: 28px; }
+}
+@media (max-width: 1024px) {
+  .shell { grid-template-columns: 1fr; max-width: 720px; }
+  .side-panel { padding: 28px; }
+  .side-panel-bottom { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; }
+  .side-photo { aspect-ratio: 1 / 1; max-width: 180px; margin-bottom: 0; }
+  .side-values { padding-top: 0; flex-direction: row; flex-wrap: wrap; }
+  .value-row { flex: 1 1 200px; }
+  .side-quote { display: none; }
+}
+@media (max-width: 700px) {
+  .side-panel-bottom { grid-template-columns: 1fr; }
+  .side-photo { max-width: 140px; margin: 0 auto 18px; }
+  .side-values { flex-direction: column; }
+}
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .header { padding: 24px 24px 22px; }
+  .form-content { padding: 28px 24px 32px; }
+  .header h1 { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+<aside class="side-panel">
+  <div class="side-logo">
+    <img src="assets/photos/logo-efficity-blanc.png" alt="Efficity">
+  </div>
+
+  <div class="side-panel-bottom">
+    <div class="side-hero">
+      <div class="side-photo">
+        <img src="assets/photos/joran-agent.png" alt="Joran Frogeais">
+      </div>
+      <div class="side-name">Joran Frogeais</div>
+      <div class="side-role">Conseiller Immobilier Efficity</div>
+      <div class="side-role" style="opacity:0.8; font-size:13px;">Rennes &amp; toute la France</div>
+    </div>
+
+    <div class="side-values">
+      <div class="value-row">
+        <div class="value-icon">⚡</div>
+        <div><strong>Réactivité priorité</strong><span>Vous prévenir avant que le bien soit en ligne</span></div>
+      </div>
+      <div class="value-row">
+        <div class="value-icon">🎯</div>
+        <div><strong>Critères affinés</strong><span>Plus c'est précis, mieux je matche</span></div>
+      </div>
+      <div class="value-row">
+        <div class="value-icon">📡</div>
+        <div><strong>Réseau Efficity 2 500 conseillers</strong><span>Accès aux mandats off-market</span></div>
+      </div>
+      <div class="value-row">
+        <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div><strong>Données confidentielles</strong><span>Pas de spam, pas de revente</span></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="side-quote">« Mes acheteurs reçoivent les biens 24-72h avant qu'ils sortent sur SeLoger. C'est la valeur ajoutée d'un mandataire actif. »</p>
+</aside>
+
+<div class="container">
+
+  <header class="header">
+    <div class="efficity-svg-logo">
+      <img src="assets/photos/logo-efficity-blanc.png" alt="Efficity">
+    </div>
+    <div class="header-top">
+      <div class="agent-photo"></div>
+      <div class="agent-info">
+        <h2>Joran Frogeais</h2>
+        <p>Conseiller Immobilier · Rennes &amp; toute la France</p>
+      </div>
+    </div>
+    <h1>Mettez à jour vos critères de recherche</h1>
+    <p class="subtitle">2 minutes pour préciser ce que vous cherchez. Je vous recontacte dès qu'un bien matche.</p>
+  </header>
+
+  <form class="form-content" id="critForm" onsubmit="return false;">
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="prenom">Prénom <span class="required">*</span></label>
+        <input type="text" id="prenom" name="prenom" placeholder="Jean" required>
+      </div>
+      <div class="form-group">
+        <label for="nom">Nom <span class="required">*</span></label>
+        <input type="text" id="nom" name="nom" placeholder="Dupont" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email <span class="required">*</span></label>
+      <input type="email" id="email" name="email" placeholder="jean.dupont@email.com" required>
+      <span class="hint">Si vous êtes déjà dans mon CRM, vos critères seront mis à jour automatiquement.</span>
+    </div>
+
+    <div class="form-group">
+      <label for="tel">Téléphone</label>
+      <input type="tel" id="tel" name="tel" placeholder="06 12 34 56 78">
+      <span class="hint">Optionnel — me permet de vous joindre rapidement quand un bien matche.</span>
+    </div>
+
+    <div class="form-group">
+      <label>Type de bien recherché <span class="required">*</span></label>
+      <div class="radio-group">
+        <div class="radio-card"><input type="radio" name="type_recherche" id="tr-maison" value="Maison" checked><label for="tr-maison">Maison</label></div>
+        <div class="radio-card"><input type="radio" name="type_recherche" id="tr-appart" value="Appartement"><label for="tr-appart">Appartement</label></div>
+        <div class="radio-card"><input type="radio" name="type_recherche" id="tr-terrain" value="Terrain"><label for="tr-terrain">Terrain</label></div>
+        <div class="radio-card"><input type="radio" name="type_recherche" id="tr-local" value="Local commercial"><label for="tr-local">Local commercial</label></div>
+        <div class="radio-card"><input type="radio" name="type_recherche" id="tr-bureau" value="Bureau"><label for="tr-bureau">Bureau</label></div>
+        <div class="radio-card"><input type="radio" name="type_recherche" id="tr-fonds" value="Fonds de commerce"><label for="tr-fonds">Fonds de commerce</label></div>
+        <div class="radio-card"><input type="radio" name="type_recherche" id="tr-indif" value="Indifférent"><label for="tr-indif">Indifférent</label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="zone_recherche">Zone de recherche</label>
+      <input type="text" id="zone_recherche" name="zone_recherche" placeholder="Rennes, Bruz, Cesson…">
+      <span class="hint">Les villes ou quartiers qui vous intéressent — séparés par des virgules.</span>
+    </div>
+
+    <div class="form-group">
+      <label for="budget">Budget</label>
+      <input type="number" id="budget" name="budget" min="0" step="1000" placeholder="350000">
+      <span class="hint">En €, fourchette haute.</span>
+    </div>
+
+    <div class="form-group">
+      <label>Délai d'achat</label>
+      <div class="radio-group">
+        <div class="radio-card"><input type="radio" name="delai" id="del-3" value="Sous 3 mois"><label for="del-3">Sous 3 mois</label></div>
+        <div class="radio-card"><input type="radio" name="delai" id="del-6" value="3-6 mois" checked><label for="del-6">3-6 mois</label></div>
+        <div class="radio-card"><input type="radio" name="delai" id="del-12" value="6-12 mois"><label for="del-12">6-12 mois</label></div>
+        <div class="radio-card"><input type="radio" name="delai" id="del-pp" value="Pas pressé"><label for="del-pp">Pas pressé</label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="notes">Précisions</label>
+      <textarea id="notes" name="notes" placeholder="Précisions critères, contraintes (étage, jardin, parking, école, travail…)"></textarea>
+    </div>
+
+    <button type="button" class="btn btn-primary" id="btnSubmit">Mettre à jour mes critères</button>
+
+    <div class="success-box" id="successBox">
+      <strong>Critères mis à jour.</strong><br>
+      Je vous recontacte dès qu'un bien correspond.
+    </div>
+
+    <div class="error-box" id="errorBox">
+      Erreur lors de l'envoi. Contactez-moi directement au <a href="tel:+33758631170" style="color:inherit;font-weight:700;">07 58 63 11 70</a>.
+    </div>
+
+    <div class="trust-badges">
+      <div class="trust-badge"><span class="icon">✓</span>Vos données restent confidentielles</div>
+      <div class="trust-badge"><span class="icon">✓</span>Pas de spam</div>
+      <div class="trust-badge"><span class="icon">✓</span>RGPD</div>
+    </div>
+
+  </form>
+</div>
+
+</div>
+
+<script>
+const WEBHOOK_URL = 'https://frogeais.app.n8n.cloud/webhook/criteres-acheteur';
+
+const form = document.getElementById('critForm');
+const btn = document.getElementById('btnSubmit');
+const successBox = document.getElementById('successBox');
+const errorBox = document.getElementById('errorBox');
+
+function validate() {
+  successBox.classList.remove('show');
+  errorBox.classList.remove('show');
+  const required = form.querySelectorAll('[required]');
+  for (const f of required) {
+    if (!f.value || !f.value.trim()) {
+      f.focus();
+      f.style.borderColor = '#e74c3c';
+      setTimeout(() => f.style.borderColor = '', 2500);
+      return false;
+    }
+  }
+  const email = document.getElementById('email');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+    email.focus();
+    email.style.borderColor = '#e74c3c';
+    return false;
+  }
+  return true;
+}
+
+function collectData() {
+  const data = {};
+  form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea').forEach(i => {
+    if (i.value && i.value.trim()) {
+      data[i.name] = i.type === 'number' ? Number(i.value) : i.value.trim();
+    }
+  });
+  form.querySelectorAll('input[type="radio"]:checked').forEach(i => {
+    if (i.value !== '') data[i.name] = i.value;
+  });
+  data.source = 'form_criteres_acheteur_web';
+  data.submitted_at = new Date().toISOString();
+  data.user_agent = navigator.userAgent;
+  data.referer = document.referrer || null;
+  return data;
+}
+
+btn.addEventListener('click', async () => {
+  if (!validate()) return;
+  btn.disabled = true;
+  btn.textContent = 'Envoi en cours…';
+  successBox.classList.remove('show');
+  errorBox.classList.remove('show');
+
+  const data = collectData();
+  try {
+    const res = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    successBox.classList.add('show');
+    btn.textContent = 'Mis à jour ✓';
+    btn.style.background = 'var(--efficity-green-dark)';
+    window.scrollTo({ top: successBox.offsetTop - 80, behavior: 'smooth' });
+  } catch (e) {
+    console.error('Webhook error', e);
+    errorBox.classList.add('show');
+    btn.disabled = false;
+    btn.textContent = 'Réessayer';
+  }
+});
+</script>
+</body>
+</html>
