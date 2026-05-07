@@ -288,6 +288,19 @@ input:focus, textarea:focus {
 .error-box { background: #FEE; color: #B12; border: 1px solid #E66; }
 .success-box.show, .error-box.show { display: block; }
 
+.alt-options {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--gray-100);
+  text-align: center;
+  font-size: 13px;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+.alt-options p { margin: 4px 0; }
+.alt-options a { color: var(--efficity-green-dark); text-decoration: none; font-weight: 600; }
+.alt-options a:hover { text-decoration: underline; }
+
 @media (min-width: 1025px) {
   .container .header-top, .container .efficity-svg-logo { display: none; }
   .container .header { padding-top: 28px; }
@@ -453,6 +466,11 @@ input:focus, textarea:focus {
       <div class="trust-badge"><span class="icon">✓</span>Vos données restent confidentielles</div>
       <div class="trust-badge"><span class="icon">✓</span>Pas de spam</div>
       <div class="trust-badge"><span class="icon">✓</span>RGPD</div>
+    </div>
+
+    <div class="alt-options">
+      <p>Vous voulez vendre votre bien ? <a href="estimation.html">Demander une estimation gratuite →</a></p>
+      <p>Autre demande ? <a href="tel:+33758631170">07 58 63 11 70</a> · <a href="mailto:jfrogeais@efficity.com">jfrogeais@efficity.com</a></p>
     </div>
 
   </form>

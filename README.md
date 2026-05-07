@@ -19,7 +19,7 @@ Site web statique du conseiller immobilier indépendant Efficity, basé à Renne
 - `a-propos.html` — parcours, méthode, garanties
 - `conseils.html` — articles + 4 sous-pages
 - `temoignages.html` — retours clients
-- `contact.html` — formulaire contact
+- `criteres-acheteur.html` — formulaire critères acheteur (voie unique contact, dedup par email)
 - `rejoindre.html` — Effistart parrainage
 - `mentions-legales.html` / `confidentialite.html`
 
