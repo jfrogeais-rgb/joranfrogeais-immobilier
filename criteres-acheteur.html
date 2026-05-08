@@ -331,9 +331,12 @@ input:focus, textarea:focus {
 {
   "@context": "https://schema.org",
   "@type": ["RealEstateAgent", "LocalBusiness"],
+  "@id": "https://joranfrogeaisimmobilier.com/#agent",
   "name": "Joran Frogeais",
   "alternateName": "Joran Frogeais Immobilier",
+  "description": "Conseiller immobilier indépendant Efficity à Rennes et Betton. Estimation gratuite, accompagnement vente et achat. 28 mandats actifs, vente moyenne en 75 jours.",
   "image": "https://joranfrogeaisimmobilier.com/assets/photos/joran-agent.png",
+  "logo": "https://joranfrogeaisimmobilier.com/assets/photos/logo-efficity-color.png",
   "url": "https://joranfrogeaisimmobilier.com",
   "telephone": "+33758631170",
   "email": "jfrogeais@efficity.com",
@@ -344,19 +347,30 @@ input:focus, textarea:focus {
     "postalCode": "35830",
     "addressCountry": "FR"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "48.180",
-    "longitude": "-1.640"
-  },
-  "areaServed": ["Rennes", "Betton", "Bruz", "Cesson-Sévigné", "Pacé", "Vezin-le-Coquet", "Chartres-de-Bretagne", "Chantepie", "Pléchâtel", "Bain-de-Bretagne"],
+  "geo": {"@type": "GeoCoordinates", "latitude": "48.180", "longitude": "-1.640"},
+  "areaServed": [
+    {"@type": "City", "name": "Rennes"},
+    {"@type": "City", "name": "Betton"},
+    {"@type": "City", "name": "Bruz"},
+    {"@type": "City", "name": "Cesson-Sévigné"},
+    {"@type": "City", "name": "Pacé"},
+    {"@type": "City", "name": "Vezin-le-Coquet"},
+    {"@type": "City", "name": "Chartres-de-Bretagne"},
+    {"@type": "City", "name": "Chantepie"},
+    {"@type": "City", "name": "Pléchâtel"},
+    {"@type": "City", "name": "Bain-de-Bretagne"}
+  ],
   "priceRange": "€€",
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "20:00"}
+  ],
   "hasCredential": [
     {"@type": "EducationalOccupationalCredential", "credentialCategory": "Carte T CPI 7501 2015 000 002 025 (CCI Paris IDF)"},
     {"@type": "EducationalOccupationalCredential", "credentialCategory": "RSAC Rennes 933 366 148"}
   ],
   "memberOf": {"@type": "Organization", "name": "Efficity", "url": "https://www.efficity.com"},
-  "sameAs": ["https://www.efficity.com/jfrogeais"]
+  "sameAs": ["https://www.efficity.com/jfrogeais"],
+  "knowsAbout": ["Estimation immobilière", "Vente maison", "Vente appartement", "Achat immobilier", "Mandat de vente", "Marché immobilier Rennes", "Diffusion immobilière"]
 }
 </script>
 </head>
