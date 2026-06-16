@@ -630,9 +630,14 @@ input:focus, select:focus, textarea:focus {
 
 @media (max-width: 1024px) {
   .shell { grid-template-columns: 1fr; max-width: 720px; }
+  /* Mobile/tablette : le formulaire passe AVANT le panneau (1er champ visible quasi direct) */
+  .container  { order: 1; }
+  .side-panel { order: 2; }
+  /* Le panneau devient un bloc de réassurance SOUS le form : on retire les doublons
+     (logo Efficity + photo sont déjà dans le header du form en mobile), on garde nom/rôle + arguments */
   .side-panel { padding: 28px; }
-  .side-panel-bottom { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; }
-  .side-photo { aspect-ratio: 1 / 1; max-width: 180px; margin-bottom: 0; }
+  .side-panel .side-logo, .side-panel .side-photo { display: none; }
+  .side-panel-bottom { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: start; }
   .side-values { padding-top: 0; flex-direction: row; flex-wrap: wrap; }
   .value-row { flex: 1 1 200px; }
   .side-quote { display: none; }
