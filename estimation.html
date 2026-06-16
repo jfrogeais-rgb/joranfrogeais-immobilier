@@ -1144,6 +1144,14 @@ function collectFormData() {
   data.submitted_at = new Date().toISOString();
   data.user_agent = navigator.userAgent;
   data.referer = document.referrer || null;
+  // Attribution canal (UTM depuis l'URL — alimenté par Smartlead/GMB/SEO/Blotato)
+  const _utm = new URLSearchParams(window.location.search);
+  data.utm_source = _utm.get('utm_source') || null;
+  data.utm_campaign = _utm.get('utm_campaign') || null;
+  data.utm_medium = _utm.get('utm_medium') || null;
+  data.canal = data.utm_source
+    ? (data.utm_campaign ? data.utm_source + '/' + data.utm_campaign : data.utm_source)
+    : 'direct';
   return data;
 }
 
