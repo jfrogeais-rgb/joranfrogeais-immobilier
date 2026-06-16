@@ -633,6 +633,8 @@ input:focus, select:focus, textarea:focus {
   /* Mobile/tablette : le formulaire passe AVANT le panneau (1er champ visible quasi direct) */
   .container  { order: 1; }
   .side-panel { order: 2; }
+  /* Logo Efficity remis dans le flux normal (en absolu il chevauchait le nom dans le header mobile) */
+  .efficity-svg-logo { position: static; height: 28px; margin-bottom: 14px; }
   /* Le panneau devient un bloc de réassurance SOUS le form : on retire les doublons
      (logo Efficity + photo sont déjà dans le header du form en mobile), on garde nom/rôle + arguments */
   .side-panel { padding: 28px; }
