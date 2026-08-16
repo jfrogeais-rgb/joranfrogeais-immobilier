@@ -13,6 +13,14 @@
     });
   }
 
+  // === Nav : passage en marine au défilement ===
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    const onNavScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onNavScroll, { passive: true });
+    onNavScroll();
+  }
+
   // === Fade-in scroll (IntersectionObserver) ===
   const reveals = document.querySelectorAll('.reveal');
   if (reveals.length && 'IntersectionObserver' in window) {
