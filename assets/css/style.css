@@ -1284,3 +1284,17 @@ ul { list-style: none; }
 .faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item p { margin-top: 14px; color: var(--muted); line-height: 1.65; font-size: 15px; }
+
+/* ============ MOUVEMENT REDUIT ============
+   Certains visiteurs (troubles vestibulaires, migraines) demandent l'arret des
+   animations au niveau du systeme. On respecte ce reglage : le contenu reste
+   visible, il n'attend simplement plus d'etre anime pour apparaitre. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}

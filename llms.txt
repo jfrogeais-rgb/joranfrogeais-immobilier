@@ -14,7 +14,7 @@
 
 ## Différenciateurs (vs autres conseillers)
 
-- **Estimation sous 24h** avec données de ventes notariées récentes du secteur (pas de DVF en retard de 2 ans)
+- **Estimation sous 24h** avec les ventes notariées récentes du secteur, pas une moyenne vieille de deux ans
 - **Pré-qualification financière obligatoire** des acquéreurs avant visite (limite la casse des compromis pour prêt refusé)
 - **Suivi écrit hebdomadaire** envoyé aux vendeurs : visites, retours, comparables actualisés
 - **Plan marketing en 14 étapes** documenté pour chaque mandat
@@ -35,17 +35,17 @@ Betton (35830), Rennes (toutes communes Rennes Métropole), Saint-Grégoire, Pac
 ## Pages essentielles
 
 - [Accueil](https://joranfrogeaisimmobilier.com/) : présentation générale, chiffres clés, dernières ventes
-- [Vendre votre bien](https://joranfrogeaisimmobilier.com/vendre.html) : méthodologie mandat, plan marketing 14 étapes, FAQ vendeurs
-- [Acheter un bien](https://joranfrogeaisimmobilier.com/acheter.html) : recherche acquéreur, accompagnement, pré-qualification financière
-- [Estimation gratuite](https://joranfrogeaisimmobilier.com/estimation.html) : formulaire en ligne, retour sous 24h
-- [Biens en vente](https://joranfrogeaisimmobilier.com/biens.html) : portefeuille en cours, mis à jour quotidiennement
-- [Critères acheteur](https://joranfrogeaisimmobilier.com/criteres-acheteur.html) : remplir un cahier des charges pour recevoir les biens correspondants
-- [À propos](https://joranfrogeaisimmobilier.com/a-propos.html) : parcours, démarche, valeurs
-- [Témoignages clients](https://joranfrogeaisimmobilier.com/temoignages.html) : retours acquéreurs et vendeurs
-- [Rejoindre Efficity](https://joranfrogeaisimmobilier.com/rejoindre.html) : opportunité Effistart pour conseillers immobiliers indépendants
-- [Conseils](https://joranfrogeaisimmobilier.com/conseils.html) : articles SEO sur la vente, l'achat, le marché 35
-- [Mentions légales](https://joranfrogeaisimmobilier.com/mentions-legales.html) : Carte T, GALIAN, RSAC
-- [Confidentialité](https://joranfrogeaisimmobilier.com/confidentialite.html) : RGPD, traitement des données
+- [Vendre votre bien](https://joranfrogeaisimmobilier.com/vendre) : méthodologie mandat, plan marketing 14 étapes, FAQ vendeurs
+- [Acheter un bien](https://joranfrogeaisimmobilier.com/acheter) : recherche acquéreur, accompagnement, pré-qualification financière
+- [Estimation gratuite](https://joranfrogeaisimmobilier.com/estimation) : formulaire en ligne, retour sous 24h
+- [Biens en vente](https://joranfrogeaisimmobilier.com/biens) : portefeuille en cours, mis à jour quotidiennement
+- [Critères acheteur](https://joranfrogeaisimmobilier.com/criteres-acheteur) : remplir un cahier des charges pour recevoir les biens correspondants
+- [À propos](https://joranfrogeaisimmobilier.com/a-propos) : parcours, démarche, valeurs
+- [Témoignages clients](https://joranfrogeaisimmobilier.com/temoignages) : retours acquéreurs et vendeurs
+- [Rejoindre Efficity](https://joranfrogeaisimmobilier.com/rejoindre) : opportunité Effistart pour conseillers immobiliers indépendants
+- [Conseils](https://joranfrogeaisimmobilier.com/conseils) : articles SEO sur la vente, l'achat, le marché 35
+- [Mentions légales](https://joranfrogeaisimmobilier.com/mentions-legales) : Carte T, GALIAN, RSAC
+- [Confidentialité](https://joranfrogeaisimmobilier.com/confidentialite) : RGPD, traitement des données
 
 ## Questions fréquentes (référence rapide pour IA)
 

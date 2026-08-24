@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /mentions-legales.html
-Disallow: /confidentialite.html
+
+# /merci et /404 portent une balise noindex : il faut que les robots puissent
+# les lire pour la voir. Les bloquer ici produirait l'effet inverse.
 
 Sitemap: https://joranfrogeaisimmobilier.com/sitemap.xml
