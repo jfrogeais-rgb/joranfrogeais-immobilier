@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exemple de rapport d'estimation — Joran Frogeais</title>
-<meta name="description" content="À quoi ressemble le rapport que vous recevez sous 24 h : méthode, données de marché relevées et prix de mise en marché recommandé.">
+<title>Exemple d'étude de marché — Joran Frogeais</title>
+<meta name="description" content="L'étude de marché que vous recevez, montrée page par page : méthode, biens en concurrence, ventes du réseau et récapitulatif des prix.">
 <meta name="theme-color" content="#284070">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Exemple de rapport d'estimation — Joran Frogeais">
-<meta property="og:description" content="Le document que vous recevez sous 24 h, montré en entier. Pas une promesse, le livrable.">
+<meta property="og:title" content="Exemple d'étude de marché — Joran Frogeais">
+<meta property="og:description" content="Le document que vous recevez, montré page par page. Pas une promesse, le livrable.">
 <meta property="og:url" content="https://joranfrogeaisimmobilier.com/exemple-rapport-estimation">
 <meta property="og:image" content="https://joranfrogeaisimmobilier.com/assets/photos/joran-og.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Joran Frogeais — Conseiller Efficity">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Exemple de rapport d'estimation — Joran Frogeais">
-<meta name="twitter:description" content="Le document que vous recevez sous 24 h, montré en entier.">
+<meta name="twitter:title" content="Exemple d'étude de marché — Joran Frogeais">
+<meta name="twitter:description" content="Le document que vous recevez, montré page par page.">
 <meta name="twitter:image" content="https://joranfrogeaisimmobilier.com/assets/photos/joran-og.jpg">
 <link rel="canonical" href="https://joranfrogeaisimmobilier.com/exemple-rapport-estimation">
 <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
@@ -27,55 +27,28 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="/assets/css/style.css">
 <style>
-  /* Reproduction du document réel envoyé aux vendeurs.
-     Palette Efficity du PDF, volontairement différente du reste du site :
-     on montre le livrable tel qu'il arrive dans la boîte mail. */
-  .doc {
-    background: #F8FBF9;
-    border: 1px solid var(--line);
-    border-radius: var(--r-lg);
-    padding: 34px 32px 30px;
-    color: #263238;
-    font-size: 15px;
-    line-height: 1.55;
-    overflow-x: auto;
-  }
-  .doc-hdr { border-bottom: 4px solid #5BB04B; padding-bottom: 14px; margin-bottom: 22px; }
-  .doc-hdr .brand { color: #3E8A30; font-size: 20px; letter-spacing: 1.5px; font-weight: 700; }
-  .doc-hdr .doc-title { font-size: 25px; font-weight: 700; margin-top: 6px; color: #263238; }
-  .doc-hdr .sub { color: #6B7C74; font-size: 14px; margin-top: 5px; }
-  .doc h2 {
-    font-size: 18px; color: #3E8A30; margin: 30px 0 12px;
-    padding-bottom: 6px; border-bottom: 2px solid #D7E9D2; font-weight: 700;
-  }
-  .doc table { width: 100%; border-collapse: collapse; margin: 12px 0 8px; font-size: 14px; }
-  .doc th { background: #3E8A30; color: #fff; text-align: left; padding: 9px 11px; font-weight: 600; font-size: 13px; }
-  .doc td { padding: 8px 11px; border-bottom: 1px solid #E3EDE0; background: #fff; }
-  .doc td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .doc tr.hi td { background: #EDF6EA; font-weight: 700; border-bottom: 2px solid #5BB04B; }
-  .doc-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0 8px; }
-  .doc-card { background: #fff; border: 1px solid #D7E9D2; border-radius: 4px; padding: 16px 12px; text-align: center; }
-  .doc-card .lbl { font-size: 12px; text-transform: uppercase; letter-spacing: .8px; color: #6B7C74; }
-  .doc-card .val { font-size: 23px; font-weight: 700; margin: 8px 0 3px; }
-  .doc-card .note { font-size: 12px; color: #8A9A92; }
-  .doc-reco { background: #3E8A30; color: #fff; border-radius: 5px; padding: 20px 26px; margin: 18px 0 8px; }
-  .doc-reco .t { font-size: 12px; text-transform: uppercase; letter-spacing: 1.2px; color: #CDE8C5; }
-  .doc-reco .p { font-size: 30px; font-weight: 700; margin: 6px 0; }
-  .doc-reco .n { font-size: 14px; color: #CDE8C5; }
-  .doc-box { background: #fff; border: 1px solid #D7E9D2; border-left: 5px solid #5BB04B; border-radius: 4px; padding: 14px 18px; margin: 14px 0; }
-  .doc-src { font-size: 13px; color: #8A9A92; font-style: italic; }
-  .doc-sig { background: #fff; border: 1px solid #D7E9D2; border-radius: 4px; padding: 15px 18px; margin-top: 20px; }
-  .doc-sig .n { font-weight: 700; color: #3E8A30; font-size: 16px; }
-  .doc-sig .d { font-size: 14px; color: #6B7C74; margin-top: 3px; }
   .bandeau-exemple {
     background: var(--gold-soft); border: 1px solid var(--gold);
-    border-radius: var(--r-md); padding: 14px 18px; margin-bottom: var(--sp-6);
-    font-size: 14px; color: var(--muted-strong);
+    border-radius: var(--r-md); padding: 15px 19px; margin-bottom: var(--sp-7);
+    font-size: 14px; line-height: 1.6; color: var(--muted-strong);
   }
-  @media (max-width: 600px) {
-    .doc { padding: 22px 18px; }
-    .doc-cards { grid-template-columns: 1fr; }
+  .doc-page { margin-bottom: var(--sp-8); }
+  .doc-page figure { margin: 0; }
+  .doc-page img {
+    width: 100%; height: auto; display: block;
+    border: 1px solid var(--line); border-radius: var(--r-md);
+    box-shadow: var(--sh-2); background: #fff;
   }
+  .doc-page figcaption {
+    margin-top: var(--sp-4);
+    display: flex; gap: 14px; align-items: baseline;
+  }
+  .doc-page .num {
+    font-family: var(--font-display); font-size: 15px; font-weight: 700;
+    color: var(--forest); flex-shrink: 0; padding-top: 1px;
+  }
+  .doc-page h2 { font-size: 19px; margin: 0 0 5px; }
+  .doc-page p { font-size: 15px; line-height: 1.65; color: var(--muted); margin: 0; }
 </style>
 <script type="application/ld+json">
 {
@@ -84,7 +57,7 @@
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://joranfrogeaisimmobilier.com/"},
     {"@type": "ListItem", "position": 2, "name": "Estimation", "item": "https://joranfrogeaisimmobilier.com/estimation"},
-    {"@type": "ListItem", "position": 3, "name": "Exemple de rapport", "item": "https://joranfrogeaisimmobilier.com/exemple-rapport-estimation"}
+    {"@type": "ListItem", "position": 3, "name": "Exemple d'étude de marché", "item": "https://joranfrogeaisimmobilier.com/exemple-rapport-estimation"}
   ]
 }
 </script>
@@ -109,97 +82,86 @@
   <div class="section-inner section-narrow">
     <div class="section-head reveal" style="display:block">
       <span class="eyebrow">Le livrable</span>
-      <h1 class="h-section">Voici le rapport que <em>vous recevez</em>.</h1>
-      <p class="lead">La plupart des sites d'estimation promettent un résultat sans jamais le montrer. Vous trouverez ci-dessous le document exact que je vous envoie, dans sa forme réelle. Vous savez donc à quoi vous attendez avant de remplir quoi que ce soit.</p>
+      <h1 class="h-section">L'étude de marché que <em>vous recevez</em>.</h1>
+      <p class="lead">La plupart des sites d'estimation promettent un résultat sans jamais le montrer. Voici le document réel, page par page. Vous savez ce que vous allez recevoir avant de remplir quoi que ce soit.</p>
     </div>
 
     <div class="bandeau-exemple reveal">
-      <strong>Ceci est un exemple.</strong> Le bien présenté n'existe pas, aucune donnée de client
-      n'apparaît ici. En revanche, les chiffres de marché sont réels : ce sont ceux relevés sur
-      Pacé le 11 août 2026, sur un échantillon de 1 411 transactions. Votre rapport aura cette
-      forme, avec les chiffres de votre commune et de votre bien.
+      <strong>Document réel, anonymisé.</strong> Il s'agit d'une étude que j'ai remise à un vendeur en juin 2026, pour un appartement à Rennes. Le nom, l'adresse et les coordonnées du propriétaire ont été supprimés du fichier, pas seulement masqués. La page listant les ventes récentes du voisinage n'est pas reproduite ici : elle contient les adresses de tiers, elle reste réservée au propriétaire.
     </div>
 
-    <article class="doc reveal">
-      <div class="doc-hdr">
-        <div class="brand">efficity</div>
-        <div class="doc-title">Avis de valeur</div>
-        <div class="sub">Maison de 110 m² avec jardin — secteur résidentiel, 35740 Pacé</div>
-      </div>
+    <div class="doc-page reveal">
+      <figure>
+        <img src="/assets/etude/etude-p01.jpg" alt="Couverture de l'étude de marché Efficity" width="869" height="1228" loading="eager">
+        <figcaption><span class="num">01</span><div>
+          <h2>La couverture</h2>
+          <p>Un document Efficity, treize pages, remis en main propre ou par mail. Ce n'est pas un chiffre lâché au téléphone.</p>
+        </div></figcaption>
+      </figure>
+    </div>
 
-      <p>Madame, Monsieur,</p>
-      <p>Comme convenu, voici l'avis de valeur de votre maison, appuyé sur les ventes récentes de votre secteur et sur les biens actuellement en concurrence directe. Je vous le donne franchement : c'est ce qui nous permettra de vendre.</p>
+    <div class="doc-page reveal">
+      <figure>
+        <img src="/assets/etude/etude-p02.jpg" alt="Page présentant le bien étudié : type, surface, commune" width="869" height="1228" loading="lazy">
+        <figcaption><span class="num">02</span><div>
+          <h2>Votre bien, nommément</h2>
+          <p>L'étude est nominative et porte sur votre bien précis, pas sur une moyenne de quartier. C'est ici que le nom et l'adresse ont été retirés.</p>
+        </div></figcaption>
+      </figure>
+    </div>
 
-      <h2>Votre bien</h2>
-      <table>
-        <tr><th>Caractéristique</th><th>Détail</th></tr>
-        <tr><td>Nature</td><td>Maison individuelle</td></tr>
-        <tr><td>Surface habitable</td><td>110 m²</td></tr>
-        <tr><td>Terrain</td><td>420 m²</td></tr>
-        <tr><td>Situation</td><td>Secteur résidentiel, proche écoles et commerces</td></tr>
-        <tr><td>État général</td><td>Bon, rafraîchissement à prévoir sur deux pièces</td></tr>
-        <tr><td>DPE</td><td>D</td></tr>
-      </table>
+    <div class="doc-page reveal">
+      <figure>
+        <img src="/assets/etude/etude-p04.jpg" alt="Les trois méthodes d'analyse utilisées dans l'étude" width="869" height="1228" loading="lazy">
+        <figcaption><span class="num">03</span><div>
+          <h2>Trois méthodes, pas une</h2>
+          <p>L'estimation algorithmique, l'analyse de la concurrence et l'analyse du marché. Chacune donne un chiffre différent, et l'écart entre les trois est déjà une information.</p>
+        </div></figcaption>
+      </figure>
+    </div>
 
-      <h2>Ce que dit le marché à Pacé</h2>
-      <p>Pacé est un marché tendu à l'achat et lent à la revente. Au moment du relevé, <strong>123 biens sont en vente</strong> sur la commune, et <strong>83 % d'entre eux y sont depuis plus de 60 jours</strong>. Seuls 4 % partent en moins de 30 jours. Autrement dit, ce n'est pas la demande qui manque, c'est le prix de départ qui trie.</p>
-      <table>
-        <tr><th>Indicateur</th><th class="num">Valeur relevée</th></tr>
-        <tr><td>Prix moyen au m²</td><td class="num">3 116 €</td></tr>
-        <tr><td>Prix médian au m²</td><td class="num">3 165 €</td></tr>
-        <tr><td>Fourchette basse du marché</td><td class="num">2 728 €/m²</td></tr>
-        <tr><td>Fourchette haute du marché</td><td class="num">3 542 €/m²</td></tr>
-        <tr><td>Biens actuellement en vente</td><td class="num">123</td></tr>
-        <tr class="hi"><td>En vente depuis plus de 60 jours</td><td class="num">83 %</td></tr>
-      </table>
-      <p class="doc-src">Relevé du 11 août 2026 sur un échantillon de 1 411 transactions, commune de Pacé (35740).</p>
+    <div class="doc-page reveal">
+      <figure>
+        <img src="/assets/etude/etude-p05.jpg" alt="Descriptif détaillé du bien : surface, pièces, ascenseur, année de construction" width="869" height="1228" loading="lazy">
+        <figcaption><span class="num">04</span><div>
+          <h2>Ce qui est retenu de votre bien</h2>
+          <p>Surface, pièces, chambres, ascenseur, stationnement, année de construction. Les éléments qui pèsent réellement sur le prix, listés noir sur blanc pour que vous puissiez les contester.</p>
+        </div></figcaption>
+      </figure>
+    </div>
 
-      <div class="doc-box">
-        <strong>Dans votre rapport</strong>, cette section liste en plus les biens précisément comparables au vôtre, avec leur surface, leur prix affiché et leur ancienneté en vente. C'est la partie qui explique le chiffre, et c'est celle que vous pourrez opposer à n'importe quel acquéreur en négociation.
-      </div>
+    <div class="doc-page reveal">
+      <figure>
+        <img src="/assets/etude/etude-p08.jpg" alt="Les biens comparables actuellement en vente sur le secteur" width="869" height="1228" loading="lazy">
+        <figcaption><span class="num">05</span><div>
+          <h2>Vos concurrents directs</h2>
+          <p>Les biens réellement en vente au même moment sur votre secteur, avec leur prix au mètre carré. Ce sont eux que votre acquéreur va visiter juste avant ou juste après vous.</p>
+        </div></figcaption>
+      </figure>
+    </div>
 
-      <h2>Le prix de marché de votre bien</h2>
-      <div class="doc-cards">
-        <div class="doc-card">
-          <div class="lbl">Fourchette basse</div>
-          <div class="val">300 000 €</div>
-          <div class="note">2 728 €/m²</div>
-        </div>
-        <div class="doc-card">
-          <div class="lbl">Valeur de marché</div>
-          <div class="val">343 000 €</div>
-          <div class="note">3 116 €/m²</div>
-        </div>
-        <div class="doc-card">
-          <div class="lbl">Fourchette haute</div>
-          <div class="val">390 000 €</div>
-          <div class="note">3 542 €/m²</div>
-        </div>
-      </div>
+    <div class="doc-page reveal">
+      <figure>
+        <img src="/assets/etude/etude-p12.jpg" alt="Biens vendus par le réseau Efficity dans le secteur" width="869" height="1228" loading="lazy">
+        <figcaption><span class="num">06</span><div>
+          <h2>Ce que le réseau a vendu près de chez vous</h2>
+          <p>Des ventes abouties, avec leur date, leur prix et leur prix au mètre carré. Pas des prix affichés, des prix signés.</p>
+        </div></figcaption>
+      </figure>
+    </div>
 
-      <div class="doc-reco">
-        <div class="t">Prix de mise en marché recommandé</div>
-        <div class="p">345 000 €</div>
-        <div class="n">Positionné juste au-dessus de la valeur de marché, pour garder une marge de négociation sans sortir des filtres de recherche à 350 000 €.</div>
-      </div>
-
-      <h2>Récapitulatif</h2>
-      <ul>
-        <li>Le marché de Pacé absorbe les biens correctement positionnés et laisse les autres s'installer : 83 % de l'offre y est depuis plus de deux mois.</li>
-        <li>Votre surface et votre terrain vous placent dans la moyenne haute du secteur.</li>
-        <li>Le rafraîchissement des deux pièces sera négocié par l'acquéreur. Mieux vaut l'intégrer au prix que le découvrir en contre-offre.</li>
-        <li>À 345 000 €, vous restez sous le seuil psychologique de 350 000 € qui coupe une partie des recherches.</li>
-      </ul>
-
-      <div class="doc-sig">
-        <div class="n">Joran Frogeais</div>
-        <div class="d">Conseiller immobilier indépendant Efficity · 07 58 63 11 70<br>
-        Carte T CPI 7501 2015 000 002 025 · Garantie financière GALIAN · RSAC Rennes 933 366 148</div>
-      </div>
-    </article>
+    <div class="doc-page reveal">
+      <figure>
+        <img src="/assets/etude/etude-p13.jpg" alt="Récapitulatif des prix estimés et recommandation finale" width="869" height="1228" loading="lazy">
+        <figcaption><span class="num">07</span><div>
+          <h2>Le récapitulatif, et ma recommandation</h2>
+          <p>Les trois méthodes côte à côte, puis le prix de mise en vente que je recommande. Cette dernière ligne se remplit devant vous, pas avant : c'est votre bien et c'est votre décision.</p>
+        </div></figcaption>
+      </figure>
+    </div>
 
     <div class="hero-cta-row reveal" style="margin-top:var(--sp-7)">
-      <a href="/estimation?utm_source=site&utm_medium=interne&utm_campaign=exemple-rapport" class="btn btn-primary">Recevoir le mien sous 24 h</a>
+      <a href="/estimation?utm_source=site&utm_medium=interne&utm_campaign=exemple-rapport" class="btn btn-primary">Recevoir la mienne sous 24 h</a>
       <a href="/vendre" class="btn btn-ghost">Comment je vends</a>
     </div>
     <p style="font-size:14px;color:var(--muted);margin-top:var(--sp-4)">Gratuit, sans engagement, et vous n'avez aucun mandat à signer pour l'obtenir.</p>

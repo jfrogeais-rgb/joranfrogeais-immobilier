@@ -45,6 +45,15 @@
 .biens-count { text-align: center; font-size: 13px; color: var(--muted); margin-bottom: var(--sp-5); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
 .bien-photo .placeholder { display: grid; place-items: center; height: 100%; color: var(--efficity-green); }
 .bien-photo .placeholder svg { width: 48px; height: 48px; }
+
+/* Biens vendus : meme grille, carte non cliquable (l'annonce n'existe plus)
+   et photo attenuee pour qu'on ne les confonde pas avec l'offre en cours. */
+.vendu-card { cursor: default; }
+.vendu-card .bien-photo img { filter: grayscale(0.35) brightness(0.94); }
+.bien-status.sold { color: var(--forest); }
+.vendu-libelle { font-weight: 600; color: var(--ink); font-size: 16px; }
+.vendu-ville { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+.vendu-mention { color: var(--forest); font-weight: 700; font-size: 15px; margin-top: 6px; }
 </style>
 <!-- SEO_SCHEMA_GEO -->
 <script type="application/ld+json">
@@ -159,6 +168,24 @@
   </div>
 </section>
 
+<!-- Biens deja vendus : alimente par le meme webhook, section soldClassifieds
+     de la fiche Efficity. Masquee tant qu'il n'y a rien a montrer. -->
+<section class="section section-warm" id="vendusSection" hidden>
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="section-head-text">
+        <span class="eyebrow">Déjà vendus</span>
+        <h2 class="h-section" id="vendusTitre">Ce que j'ai vendu.</h2>
+      </div>
+      <a href="/estimation" class="btn-link">
+        Estimer mon bien
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+    <div id="vendusContainer"></div>
+  </div>
+</section>
+
 <section class="cta">
   <div class="cta-inner reveal">
     <h2 class="h-section">Vous ne trouvez pas votre bien ?</h2>
@@ -252,9 +279,31 @@ const renderBiens = () => {
   }).join('') + '</div>';
 };
 
+const renderVendus = (vendus) => {
+  const section = document.getElementById('vendusSection');
+  if (!vendus || !vendus.length) return;               // rien a montrer : la section reste masquee
+  document.getElementById('vendusTitre').textContent =
+    vendus.length > 1 ? `Mes ${vendus.length} dernières ventes.` : 'Ma dernière vente.';
+  document.getElementById('vendusContainer').innerHTML =
+    '<div class="biens-grid">' + vendus.map(v => `
+      <div class="bien-card vendu-card">
+        <div class="bien-photo">
+          <img src="${escUrl(v.photo)}" alt="${esc(v.alt || v.libelle)}" loading="lazy">
+          <span class="bien-status sold">${esc(v.statut) || 'Vendu'}</span>
+        </div>
+        <div class="bien-body">
+          <div class="vendu-ville">${esc(v.ville)}</div>
+          <div class="vendu-libelle">${esc(v.libelle)}</div>
+          <div class="vendu-mention">${esc(v.statut) || 'Vendu'}</div>
+        </div>
+      </div>`).join('') + '</div>';
+  section.hidden = false;
+};
+
 fetch(API_URL).then(r => r.json()).then(data => {
   allMandats = data.mandats || [];
   renderBiens();
+  renderVendus(data.vendus);
 }).catch(() => {
   container.innerHTML = '<div class="biens-empty">Impossible de charger les biens. Consultez ma page <a href="' + EFFICITY_PROFILE + '" target="_blank" style="color:var(--efficity-green-dark);text-decoration:underline;">Efficity</a> ou <a href="/criteres-acheteur" style="color:var(--efficity-green-dark);text-decoration:underline;">contactez-moi</a>.</div>';
 });
