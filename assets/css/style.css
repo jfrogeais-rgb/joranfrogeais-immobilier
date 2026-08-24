@@ -483,12 +483,9 @@ ul { list-style: none; }
   padding: var(--sp-6);
   border-radius: var(--r-lg);
   border: 1px solid var(--line);
-  transition: border-color 200ms ease, transform 200ms ease;
 }
-.feature:hover {
-  border-color: var(--forest);
-  transform: translateY(-3px);
-}
+/* .feature n'est pas cliquable : pas d'effet de survol.
+   Un element qui bouge sous la souris promet une action qui n'existe pas. */
 .feature-icon {
   width: 44px;
   height: 44px;

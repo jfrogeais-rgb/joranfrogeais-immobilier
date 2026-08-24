@@ -43,6 +43,8 @@
   --gray-300: #D4D4D4;
   --gray-100: #F5F5F5;
   --white: #FFFFFF;
+  /* Blanc casse pour les surfaces : le blanc absolu fait "genere" */
+  --surface: #FAFAF9;
   --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   --radius: 12px;
 }
@@ -72,7 +74,7 @@ body {
 }
 
 .container {
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -89,30 +91,6 @@ body {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-}
-
-.side-panel::before {
-  content: "";
-  position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(circle, rgba(242, 217, 0, 0.25) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.side-panel::after {
-  content: "";
-  position: absolute;
-  bottom: -80px;
-  left: -80px;
-  width: 260px;
-  height: 260px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
 }
 
 .side-logo {
