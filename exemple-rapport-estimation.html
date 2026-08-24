@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemple de rapport d'estimation — Joran Frogeais</title>
+<meta name="description" content="À quoi ressemble le rapport que vous recevez sous 24 h : méthode, données de marché relevées et prix de mise en marché recommandé.">
+<meta name="theme-color" content="#284070">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exemple de rapport d'estimation — Joran Frogeais">
+<meta property="og:description" content="Le document que vous recevez sous 24 h, montré en entier. Pas une promesse, le livrable.">
+<meta property="og:url" content="https://joranfrogeaisimmobilier.com/exemple-rapport-estimation">
+<meta property="og:image" content="https://joranfrogeaisimmobilier.com/assets/photos/joran-og.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Joran Frogeais — Conseiller Efficity">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Exemple de rapport d'estimation — Joran Frogeais">
+<meta name="twitter:description" content="Le document que vous recevez sous 24 h, montré en entier.">
+<meta name="twitter:image" content="https://joranfrogeaisimmobilier.com/assets/photos/joran-og.jpg">
+<link rel="canonical" href="https://joranfrogeaisimmobilier.com/exemple-rapport-estimation">
+<link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  /* Reproduction du document réel envoyé aux vendeurs.
+     Palette Efficity du PDF, volontairement différente du reste du site :
+     on montre le livrable tel qu'il arrive dans la boîte mail. */
+  .doc {
+    background: #F8FBF9;
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    padding: 34px 32px 30px;
+    color: #263238;
+    font-size: 15px;
+    line-height: 1.55;
+    overflow-x: auto;
+  }
+  .doc-hdr { border-bottom: 4px solid #5BB04B; padding-bottom: 14px; margin-bottom: 22px; }
+  .doc-hdr .brand { color: #3E8A30; font-size: 20px; letter-spacing: 1.5px; font-weight: 700; }
+  .doc-hdr .doc-title { font-size: 25px; font-weight: 700; margin-top: 6px; color: #263238; }
+  .doc-hdr .sub { color: #6B7C74; font-size: 14px; margin-top: 5px; }
+  .doc h2 {
+    font-size: 18px; color: #3E8A30; margin: 30px 0 12px;
+    padding-bottom: 6px; border-bottom: 2px solid #D7E9D2; font-weight: 700;
+  }
+  .doc table { width: 100%; border-collapse: collapse; margin: 12px 0 8px; font-size: 14px; }
+  .doc th { background: #3E8A30; color: #fff; text-align: left; padding: 9px 11px; font-weight: 600; font-size: 13px; }
+  .doc td { padding: 8px 11px; border-bottom: 1px solid #E3EDE0; background: #fff; }
+  .doc td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .doc tr.hi td { background: #EDF6EA; font-weight: 700; border-bottom: 2px solid #5BB04B; }
+  .doc-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0 8px; }
+  .doc-card { background: #fff; border: 1px solid #D7E9D2; border-radius: 4px; padding: 16px 12px; text-align: center; }
+  .doc-card .lbl { font-size: 12px; text-transform: uppercase; letter-spacing: .8px; color: #6B7C74; }
+  .doc-card .val { font-size: 23px; font-weight: 700; margin: 8px 0 3px; }
+  .doc-card .note { font-size: 12px; color: #8A9A92; }
+  .doc-reco { background: #3E8A30; color: #fff; border-radius: 5px; padding: 20px 26px; margin: 18px 0 8px; }
+  .doc-reco .t { font-size: 12px; text-transform: uppercase; letter-spacing: 1.2px; color: #CDE8C5; }
+  .doc-reco .p { font-size: 30px; font-weight: 700; margin: 6px 0; }
+  .doc-reco .n { font-size: 14px; color: #CDE8C5; }
+  .doc-box { background: #fff; border: 1px solid #D7E9D2; border-left: 5px solid #5BB04B; border-radius: 4px; padding: 14px 18px; margin: 14px 0; }
+  .doc-src { font-size: 13px; color: #8A9A92; font-style: italic; }
+  .doc-sig { background: #fff; border: 1px solid #D7E9D2; border-radius: 4px; padding: 15px 18px; margin-top: 20px; }
+  .doc-sig .n { font-weight: 700; color: #3E8A30; font-size: 16px; }
+  .doc-sig .d { font-size: 14px; color: #6B7C74; margin-top: 3px; }
+  .bandeau-exemple {
+    background: var(--gold-soft); border: 1px solid var(--gold);
+    border-radius: var(--r-md); padding: 14px 18px; margin-bottom: var(--sp-6);
+    font-size: 14px; color: var(--muted-strong);
+  }
+  @media (max-width: 600px) {
+    .doc { padding: 22px 18px; }
+    .doc-cards { grid-template-columns: 1fr; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://joranfrogeaisimmobilier.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Estimation", "item": "https://joranfrogeaisimmobilier.com/estimation"},
+    {"@type": "ListItem", "position": 3, "name": "Exemple de rapport", "item": "https://joranfrogeaisimmobilier.com/exemple-rapport-estimation"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-logo"><img src="/assets/photos/logo-efficity-color.png" alt="Efficity" style="height:36px;width:auto;display:block;"><span class="nav-logo-text">Joran Frogeais<small>Conseiller Efficity · Bretagne</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="nav-links">
+    <a href="/">Accueil</a>
+    <a href="/vendre">Vendre</a>
+    <a href="/acheter">Acheter</a>
+    <a href="/biens">Mes biens</a>
+    <a href="/conseils">Conseils</a>
+    <a href="/a-propos">À propos</a>
+    <a href="/estimation" class="nav-cta">Estimation gratuite<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</div></nav>
+
+<section class="section">
+  <div class="section-inner section-narrow">
+    <div class="section-head reveal" style="display:block">
+      <span class="eyebrow">Le livrable</span>
+      <h1 class="h-section">Voici le rapport que <em>vous recevez</em>.</h1>
+      <p class="lead">La plupart des sites d'estimation promettent un résultat sans jamais le montrer. Vous trouverez ci-dessous le document exact que je vous envoie, dans sa forme réelle. Vous savez donc à quoi vous attendez avant de remplir quoi que ce soit.</p>
+    </div>
+
+    <div class="bandeau-exemple reveal">
+      <strong>Ceci est un exemple.</strong> Le bien présenté n'existe pas, aucune donnée de client
+      n'apparaît ici. En revanche, les chiffres de marché sont réels : ce sont ceux relevés sur
+      Pacé le 11 août 2026, sur un échantillon de 1 411 transactions. Votre rapport aura cette
+      forme, avec les chiffres de votre commune et de votre bien.
+    </div>
+
+    <article class="doc reveal">
+      <div class="doc-hdr">
+        <div class="brand">efficity</div>
+        <div class="doc-title">Avis de valeur</div>
+        <div class="sub">Maison de 110 m² avec jardin — secteur résidentiel, 35740 Pacé</div>
+      </div>
+
+      <p>Madame, Monsieur,</p>
+      <p>Comme convenu, voici l'avis de valeur de votre maison, appuyé sur les ventes récentes de votre secteur et sur les biens actuellement en concurrence directe. Je vous le donne franchement : c'est ce qui nous permettra de vendre.</p>
+
+      <h2>Votre bien</h2>
+      <table>
+        <tr><th>Caractéristique</th><th>Détail</th></tr>
+        <tr><td>Nature</td><td>Maison individuelle</td></tr>
+        <tr><td>Surface habitable</td><td>110 m²</td></tr>
+        <tr><td>Terrain</td><td>420 m²</td></tr>
+        <tr><td>Situation</td><td>Secteur résidentiel, proche écoles et commerces</td></tr>
+        <tr><td>État général</td><td>Bon, rafraîchissement à prévoir sur deux pièces</td></tr>
+        <tr><td>DPE</td><td>D</td></tr>
+      </table>
+
+      <h2>Ce que dit le marché à Pacé</h2>
+      <p>Pacé est un marché tendu à l'achat et lent à la revente. Au moment du relevé, <strong>123 biens sont en vente</strong> sur la commune, et <strong>83 % d'entre eux y sont depuis plus de 60 jours</strong>. Seuls 4 % partent en moins de 30 jours. Autrement dit, ce n'est pas la demande qui manque, c'est le prix de départ qui trie.</p>
+      <table>
+        <tr><th>Indicateur</th><th class="num">Valeur relevée</th></tr>
+        <tr><td>Prix moyen au m²</td><td class="num">3 116 €</td></tr>
+        <tr><td>Prix médian au m²</td><td class="num">3 165 €</td></tr>
+        <tr><td>Fourchette basse du marché</td><td class="num">2 728 €/m²</td></tr>
+        <tr><td>Fourchette haute du marché</td><td class="num">3 542 €/m²</td></tr>
+        <tr><td>Biens actuellement en vente</td><td class="num">123</td></tr>
+        <tr class="hi"><td>En vente depuis plus de 60 jours</td><td class="num">83 %</td></tr>
+      </table>
+      <p class="doc-src">Relevé du 11 août 2026 sur un échantillon de 1 411 transactions, commune de Pacé (35740).</p>
+
+      <div class="doc-box">
+        <strong>Dans votre rapport</strong>, cette section liste en plus les biens précisément comparables au vôtre, avec leur surface, leur prix affiché et leur ancienneté en vente. C'est la partie qui explique le chiffre, et c'est celle que vous pourrez opposer à n'importe quel acquéreur en négociation.
+      </div>
+
+      <h2>Le prix de marché de votre bien</h2>
+      <div class="doc-cards">
+        <div class="doc-card">
+          <div class="lbl">Fourchette basse</div>
+          <div class="val">300 000 €</div>
+          <div class="note">2 728 €/m²</div>
+        </div>
+        <div class="doc-card">
+          <div class="lbl">Valeur de marché</div>
+          <div class="val">343 000 €</div>
+          <div class="note">3 116 €/m²</div>
+        </div>
+        <div class="doc-card">
+          <div class="lbl">Fourchette haute</div>
+          <div class="val">390 000 €</div>
+          <div class="note">3 542 €/m²</div>
+        </div>
+      </div>
+
+      <div class="doc-reco">
+        <div class="t">Prix de mise en marché recommandé</div>
+        <div class="p">345 000 €</div>
+        <div class="n">Positionné juste au-dessus de la valeur de marché, pour garder une marge de négociation sans sortir des filtres de recherche à 350 000 €.</div>
+      </div>
+
+      <h2>Récapitulatif</h2>
+      <ul>
+        <li>Le marché de Pacé absorbe les biens correctement positionnés et laisse les autres s'installer : 83 % de l'offre y est depuis plus de deux mois.</li>
+        <li>Votre surface et votre terrain vous placent dans la moyenne haute du secteur.</li>
+        <li>Le rafraîchissement des deux pièces sera négocié par l'acquéreur. Mieux vaut l'intégrer au prix que le découvrir en contre-offre.</li>
+        <li>À 345 000 €, vous restez sous le seuil psychologique de 350 000 € qui coupe une partie des recherches.</li>
+      </ul>
+
+      <div class="doc-sig">
+        <div class="n">Joran Frogeais</div>
+        <div class="d">Conseiller immobilier indépendant Efficity · 07 58 63 11 70<br>
+        Carte T CPI 7501 2015 000 002 025 · Garantie financière GALIAN · RSAC Rennes 933 366 148</div>
+      </div>
+    </article>
+
+    <div class="hero-cta-row reveal" style="margin-top:var(--sp-7)">
+      <a href="/estimation?utm_source=site&utm_medium=interne&utm_campaign=exemple-rapport" class="btn btn-primary">Recevoir le mien sous 24 h</a>
+      <a href="/vendre" class="btn btn-ghost">Comment je vends</a>
+    </div>
+    <p style="font-size:14px;color:var(--muted);margin-top:var(--sp-4)">Gratuit, sans engagement, et vous n'avez aucun mandat à signer pour l'obtenir.</p>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-brand">
+    <div class="nav-logo"><img src="/assets/photos/logo-efficity-blanc.png" alt="Efficity" style="height:30px;width:auto;display:block;"><span class="nav-logo-text">Joran Frogeais<small>Conseiller Efficity · Bretagne</small></span></div>
+    <p>Conseiller immobilier indépendant Efficity. Rennes, Bretagne et toute la France via le réseau Efficity de 2 500+ conseillers.</p>
+  </div>
+  <div><h4>Services</h4><ul><li><a href="/vendre">Vendre un bien</a></li><li><a href="/acheter">Acheter un bien</a></li><li><a href="/estimation">Estimation gratuite</a></li><li><a href="/rejoindre">Rejoindre Efficity</a></li></ul></div>
+  <div><h4>Ressources</h4><ul><li><a href="/biens">Mes biens</a></li><li><a href="/conseils">Conseils</a></li><li><a href="/temoignages">Avis clients</a></li><li><a href="/a-propos">À propos</a></li></ul></div>
+  <div><h4>Contact</h4><ul><li><a href="tel:+33758631170">07 58 63 11 70</a></li><li><a href="mailto:jfrogeais@efficity.com">jfrogeais@efficity.com</a></li><li><a href="/criteres-acheteur">Critères acheteur</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+</div><div class="footer-bottom">
+  <span>© <span data-year>2026</span> Joran Frogeais — Conseiller indépendant Efficity</span>
+  <span><a href="/confidentialite">Confidentialité</a> · <a href="/mentions-legales">Mentions légales</a></span>
+</div></footer>
+
+<script src="/assets/js/script.js" defer></script>
+</body>
+</html>
