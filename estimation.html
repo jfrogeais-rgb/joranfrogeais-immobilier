@@ -1044,6 +1044,7 @@ input:focus, select:focus, textarea:focus {
           <a href="#" style="color: var(--vert-action-deep);">Politique de confidentialité</a>
         </label>
       </div>
+      <div id="turnstile-estim" aria-hidden="true"></div>
     </div>
 
     <!-- NAV -->
@@ -1066,9 +1067,29 @@ input:focus, select:focus, textarea:focus {
 </div><!-- /.shell -->
 
 <script>
-// Webhook n8n WF08 (ingestion formulaire estimation)
-const WEBHOOK_URL = 'https://frogeais.app.n8n.cloud/webhook/estim-form';
+// Bordure Cloudflare : /api/estimation vérifie Turnstile et le débit, puis relaie vers n8n.
+const WEBHOOK_URL = '/api/estimation';
 const MERCI_URL = '/merci';
+// Clé publique du widget Turnstile. Celle-ci est la clé de test invisible de Cloudflare
+// (toujours acceptée) : la clé du vrai widget la remplace avant la mise en production.
+const TURNSTILE_SITEKEY = '1x00000000000000000000BB';
+let turnstileId = null;
+window.turnstileReady = function () {
+  if (!document.getElementById('turnstile-estim')) return;
+  turnstileId = turnstile.render('#turnstile-estim', {
+    sitekey: TURNSTILE_SITEKEY,
+    appearance: 'interaction-only',
+    'expired-callback': function () { turnstile.reset(turnstileId); }
+  });
+};
+async function jetonTurnstile() {
+  for (let i = 0; i < 40; i++) {
+    const t = (turnstileId !== null && window.turnstile) ? turnstile.getResponse(turnstileId) : '';
+    if (t) return t;
+    await new Promise(function (r) { setTimeout(r, 250); });
+  }
+  return '';
+}
 
 let currentStep = 1;
 const totalSteps = 3;
@@ -1157,6 +1178,7 @@ async function submitForm() {
 
   let envoye = false;
   try {
+    data['cf-turnstile-response'] = await jetonTurnstile();
     const res = await fetch(WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -1197,5 +1219,6 @@ document.querySelectorAll('.checkbox-item input').forEach(cb => {
   cb.addEventListener('change', e => e.target.closest('.checkbox-item').classList.toggle('checked', e.target.checked));
 });
 </script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=turnstileReady&render=explicit" async defer></script>
 </body>
 </html>

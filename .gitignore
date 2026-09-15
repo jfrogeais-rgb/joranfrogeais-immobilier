@@ -18,3 +18,6 @@ _tmp_*
 # Variables d'environnement (si futur)
 .env
 .env.local
+
+# cache local de wrangler pages dev
+.wrangler/
