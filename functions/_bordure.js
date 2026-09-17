@@ -8,6 +8,9 @@
 //   4. relais vers le webhook n8n avec le secret que seule cette bordure connaît.
 // Un robot arrêté ici ne coûte aucune exécution n8n.
 //
+// Deux routes seulement, les deux formulaires du site (decision de Joran, 17/09) : le
+// formulaire solaire est hors perimetre, aucune route d'une autre origine.
+//
 // Variables (Pages > Settings > Variables and Secrets) :
 //   TURNSTILE_SECRET     secret du widget Turnstile
 //   SECRET_BORDURE_N8N   valeur de l'en-tête x-site-secret attendu par les webhooks
@@ -21,10 +24,14 @@ const TAILLE_MAX = 16384;
 
 // Compteur par IP dans le cache du point de présence : pas de garantie globale, mais
 // aucune limite d'écriture, et une rafale depuis une même adresse arrive au même endroit.
+// ⚠️ Si le cache refuse d'écrire, le compteur ne compte plus : il le DIT (mode 'degrade',
+// en-tête x-bordure-limite) au lieu de laisser croire à une limite qui n'existe pas.
+// La limite dure reste la règle de débit de la zone, en amont de cette fonction.
 async function compter(request, ip) {
   let cache;
   try { cache = caches.default; } catch (e) { return { refus: false, mode: 'absent' }; }
   if (!cache || !ip) return { refus: false, mode: 'absent' };
+  let degrade = false;
   const hote = new URL(request.url).origin;
   const t = Date.now();
   const cles = [
@@ -37,32 +44,19 @@ async function compter(request, ip) {
     let n = 0;
     try { const r = await cache.match(req); if (r) n = Number(await r.text()) || 0; } catch (e) { n = 0; }
     n += 1;
-    try { await cache.put(req, new Response(String(n), { headers: { 'cache-control': 'max-age=' + ttl, 'content-type': 'text/plain' } })); } catch (e) { /* compteur au mieux */ }
+    try { await cache.put(req, new Response(String(n), { headers: { 'cache-control': 'max-age=' + ttl, 'content-type': 'text/plain' } })); } catch (e) { degrade = true; }
     if (n > max && !refus) refus = nom;
   }
-  return refus ? { refus: true, motif: refus, mode: 'cache' } : { refus: false, mode: 'cache' };
+  const mode = degrade ? 'degrade' : 'cache';
+  return refus ? { refus: true, motif: refus, mode } : { refus: false, mode };
 }
 
-// Une route appelée depuis un autre site (le formulaire solaire) reçoit ses réponses avec
-// l'origine autorisée ; toute autre origine n'obtient pas l'en-tête et le navigateur bloque.
-function cors(origines, request) {
-  const origine = request.headers.get('origin') || '';
-  return origines && origines.includes(origine) ? { 'access-control-allow-origin': origine, 'access-control-allow-methods': 'POST, OPTIONS', 'access-control-allow-headers': 'content-type', 'access-control-max-age': '86400', vary: 'origin' } : {};
-}
-
-export function prevol(context, origines) {
-  const e = cors(origines, context.request);
-  return new Response(null, { status: e['access-control-allow-origin'] ? 204 : 403, headers: e });
-}
-
-export async function bordure(context, cheminN8n, origines) {
+export async function bordure(context, cheminN8n) {
   const { request, env } = context;
-  const e = cors(origines, request);
   const reponse = (statut, corps, entetes) => new Response(JSON.stringify(corps), {
     status: statut,
-    headers: Object.assign({ 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' }, e, entetes || {}),
+    headers: Object.assign({ 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' }, entetes || {}),
   });
-  if (origines && !e['access-control-allow-origin']) return reponse(403, { ok: false, erreur: 'origine_refusee' });
   if (!env.TURNSTILE_SECRET || !env.SECRET_BORDURE_N8N) return reponse(503, { ok: false, erreur: 'bordure_non_configuree' });
   const ip = request.headers.get('cf-connecting-ip') || '';
 
