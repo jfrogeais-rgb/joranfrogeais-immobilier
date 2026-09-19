@@ -576,7 +576,7 @@ input:focus, textarea:focus {
 // Bordure Cloudflare : /api/criteres-acheteur vérifie Turnstile et le débit, puis relaie vers n8n.
 const WEBHOOK_URL = '/api/criteres-acheteur';
 // Clé publique du widget Turnstile (clé de test invisible, remplacée avant la mise en production).
-const TURNSTILE_SITEKEY = '1x00000000000000000000BB';
+const TURNSTILE_SITEKEY = '0x4AAAAAAE87BdD7tEvHp6Xf';
 let turnstileId = null;
 window.turnstileReady = function () {
   if (!document.getElementById('turnstile-crit')) return;
